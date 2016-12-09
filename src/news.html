@@ -4,7 +4,6 @@
         <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
 
-
     <!--导航条-->
         <div class="bar bar-subheader">
             <ion-scroll class="button-bar"
@@ -35,8 +34,8 @@
     <!--新闻列表-->
     <ion-list>
         <ion-item ng-repeat="item in items" class="zyx" ng-click="doSome($index)">
-            <img ng-src="{{item.imgsrc}}">
-            <span>{{item.title}}</span>
+            <span><img ng-src="{{item.imgsrc}}"></span>
+            <span class="zyxSpan">{{item.title}}</span>
         </ion-item>
     </ion-list>
     <!--上拉加载-->

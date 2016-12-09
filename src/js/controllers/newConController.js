@@ -17,7 +17,7 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
     console.log(docid);
     var url = 'http://c.m.163.com/nc/article/'+ docid +'/full.html';
     HttpFactory.getData(url).then(function (result) {
-        $scope.newCon.detail  = result;
+        $scope.newCon.detail  = result[docid];
         console.log($scope.newCon.detail);
 
         var newsObj = $scope.newCon.detail;

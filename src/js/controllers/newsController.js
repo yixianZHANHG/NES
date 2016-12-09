@@ -11,12 +11,12 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('newsController',['$scope','$ionicPopup','$state','$ionicViewSwitcher','HttpFactory',"$ionicLoading","$ionicScrollDelegate",function ($scope,$ionicPopup,$state,$ionicViewSwitcher,HttpFactory,$ionicLoading,$ionicScrollDelegate) {
+}]).controller('newsController',['$scope','$ionicPopup','$state','$ionicViewSwitcher',"$ionicLoading","$ionicScrollDelegate",'HttpFactory',function ($scope,$ionicPopup,$state,$ionicViewSwitcher,$ionicLoading,$ionicScrollDelegate,HttpFactory) {
     // 导航
     var url = "http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html";
     HttpFactory.getData(url).then(function (result) {
-        $scope.numArry = result;
-        // console.log($scope.numArry[0]);
+        $scope.numArry = result.tList;
+        // console.log(result);
     })
 
     // 轮播图
@@ -27,7 +27,7 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     var url = "http://c.3g.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10";
     HttpFactory.getData(url).then(function (result) {
         $scope.news.newsArray = result;
-        $scope.news.adsArray = result[0].ads;
+        $scope.news.adsArray = result.T1348647909107[0].ads;
     });
 
     // 上拉加载
@@ -40,7 +40,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
         console.log(indexd);
         if (indexd <= 40){
             HttpFactory.getData(url).then(function (result) {
-                $scope.items = $scope.items.concat(result);
+                // console.log(result)
+                $scope.items = $scope.items.concat(result.tid);
                 console.log(2222222);
                 // console.log( $scope.items);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -55,7 +56,7 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     $scope.doRefresh = function() {
      var url =  'http://c.m.163.com/recommend/getSubDocPic?from=toutiao&offset=0&size=10';
         HttpFactory.getData(url).then(function (result) {
-            $scope.items = result;
+            $scope.items = result.tid;
             console.log(11111);
             $scope.isShowInfinite = true;
             indexd = 10;

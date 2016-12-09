@@ -2,7 +2,7 @@
  * Created by qingyun on 16/11/30.
  */
 //js程序入口
-angular.module('myApp',['ionic','myApp.httpFactory','myApp.slideBox','myApp.tabs','myApp.news','myApp.live','myApp.topic','myApp.personal','myApp.my','myApp.newCon','myApp.lunb']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+angular.module('myApp',['ionic','myApp.httpFactory','myApp.slideBox','myApp.tabs','myApp.news','myApp.live','myApp.topic','myApp.personal','myApp.my','myApp.newCon']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     $ionicConfigProvider.views.transition('ios');
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.navBar.alignTitle('center');
@@ -29,8 +29,32 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('liveController',['$scope','LuboService',function ($scope,LuboService) {
+}]).controller('liveController',['$scope','$ionicSlideBoxDelegate','HttpFactory',function ($scope,$ionicSlideBoxDelegate,HttpFactory) {
+    // 轮播图
+    $scope.news = {
+        newsArray1:'',
+        adsArray1:[]
+    };
+    var url = "http://c.3g.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10";
+    HttpFactory.getData(url).then(function (result) {
+        $scope.news.newsArray1 = result;
+        $scope.news.adsArray1 = result.T1348647909107[0].ads;
+    });
 
+    // 预告
+   var url ='http://data.live.126.net/livechannel/previewlist.json';
+    HttpFactory.getData(url).then(function (result) {
+        console.log(result)
+        $scope.imas = result.future;
+        $scope.itema = result.sublives;
+        $scope.imad = result.live_review;
+        $scope.imada = result.live_review[0].sourceinfo;
+        console.log($scope.imada.timg);
+        console.log($scope.imada.tname);
+
+
+
+    });
 }]);
 /**
  * Created by Administrator on 2016/12/6.
@@ -70,7 +94,7 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
     console.log(docid);
     var url = 'http://c.m.163.com/nc/article/'+ docid +'/full.html';
     HttpFactory.getData(url).then(function (result) {
-        $scope.newCon.detail  = result;
+        $scope.newCon.detail  = result[docid];
         console.log($scope.newCon.detail);
 
         var newsObj = $scope.newCon.detail;
@@ -103,12 +127,12 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('newsController',['$scope','$ionicPopup','$state','$ionicViewSwitcher','HttpFactory',"$ionicLoading","$ionicScrollDelegate",function ($scope,$ionicPopup,$state,$ionicViewSwitcher,HttpFactory,$ionicLoading,$ionicScrollDelegate) {
+}]).controller('newsController',['$scope','$ionicPopup','$state','$ionicViewSwitcher',"$ionicLoading","$ionicScrollDelegate",'HttpFactory',function ($scope,$ionicPopup,$state,$ionicViewSwitcher,$ionicLoading,$ionicScrollDelegate,HttpFactory) {
     // 导航
     var url = "http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html";
     HttpFactory.getData(url).then(function (result) {
-        $scope.numArry = result;
-        // console.log($scope.numArry[0]);
+        $scope.numArry = result.tList;
+        // console.log(result);
     })
 
     // 轮播图
@@ -119,7 +143,7 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     var url = "http://c.3g.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10";
     HttpFactory.getData(url).then(function (result) {
         $scope.news.newsArray = result;
-        $scope.news.adsArray = result[0].ads;
+        $scope.news.adsArray = result.T1348647909107[0].ads;
     });
 
     // 上拉加载
@@ -132,7 +156,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
         console.log(indexd);
         if (indexd <= 40){
             HttpFactory.getData(url).then(function (result) {
-                $scope.items = $scope.items.concat(result);
+                // console.log(result)
+                $scope.items = $scope.items.concat(result.tid);
                 console.log(2222222);
                 // console.log( $scope.items);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -147,7 +172,7 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     $scope.doRefresh = function() {
      var url =  'http://c.m.163.com/recommend/getSubDocPic?from=toutiao&offset=0&size=10';
         HttpFactory.getData(url).then(function (result) {
-            $scope.items = result;
+            $scope.items = result.tid;
             console.log(11111);
             $scope.isShowInfinite = true;
             indexd = 10;
@@ -169,6 +194,118 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     }
 }]);
 /**
+ * Created by qingyun on 16/12/7.
+ */
+
+angular.module('cftApp.news1',[]).controller('newsController1',['$scope','$ionicPopup','$ionicSlideBoxDelegate','$state','HttpFactory','UrlArray',function ($scope,$ionicPopup,$ionicSlideBoxDelegate,$state,HttpFactory,UrlArray) {
+    $scope.news = {
+        newsArray1:[],
+        adsArray1:[],
+        index:0
+    };
+    $scope.$on('updateNews1',function (evt,msg) {
+        $scope.news.adsArray1 = [];
+        $scope.news.newsArray1 = [];
+        $scope.news.index = 0;
+        console.log('view1,' + msg);
+        if(msg == "清理"){
+            return;
+        }
+        $scope.loadMore1(UrlArray[msg]);
+    });
+    $scope.loadMore1 = function (str) {
+        var url = '';
+        if (str){
+            url = str;
+            url = url.replace('@',$scope.news.index);
+
+        }else {
+            url = "http://c.m.163.com/dlist/article/dynamic?from=T1348648517839&offset=" + $scope.news.index + "&size=10&fn=7&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639275&sign=ENAtFozNgGugOq3e1UL6hWbkeBqF24b8ECZ%2FOg2OGlZ48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D";
+        }
+        if ($scope.news.index === 0){
+            $scope.news.index += 11;
+        }else {
+            $scope.news.index += 10;
+        }
+        HttpFactory.getData(url).then(function (result) {
+            if (!result){
+                alert("没有更多数据!");
+                return;
+            }
+            if (!$scope.news.adsArray1.length){
+                if(result[0].ads){
+                    //由于网易新闻有时候除了第一次之外没有头条用个数组存着
+                    $scope.news.adsArray1 = result[0].ads;
+                }
+            }
+            $scope.news.newsArray1 = $scope.news.newsArray1.concat(result);
+            if ($scope.news.index === 0){
+                $scope.news.newsArray1.splice(0,1);
+            }
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+
+        });
+    };
+
+
+}]);
+/**
+ * Created by qingyun on 16/12/7.
+ */
+
+angular.module('cftApp.news2',[]).controller('newsController2',['$scope','$ionicPopup','$ionicSlideBoxDelegate','$state','HttpFactory','UrlArray',function ($scope,$ionicPopup,$ionicSlideBoxDelegate,$state,HttpFactory,UrlArray) {
+    $scope.news = {
+        newsArray2:[],
+        adsArray2:[],
+        index:0
+    };
+    $scope.$on('updateNews2',function (evt,msg) {
+        $scope.news.adsArray2 = [];
+        $scope.news.newsArray2 = [];
+        $scope.news.index = 0;
+        console.log('view2,'+ msg);
+        if(msg == "清理"){
+            return;
+        }
+        $scope.loadMore2(UrlArray[msg]);
+    });
+    $scope.loadMore2 = function (str) {
+        var url = '';
+        if (str){
+            url = str;
+            url = url.replace('@',$scope.news.index);
+
+        }else {
+            url = "http://c.m.163.com/recommend/getChanListNews?channel=T1456112189138&size=10&offset="+ $scope.news.index +"&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640855&sign=n%2BRpzwR4DEI0MaavyBhQlpZaxlFxQdWjn0Ty7qOYWaB48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D";
+        }
+        if ($scope.news.index === 0){
+            $scope.news.index += 11;
+        }else {
+            $scope.news.index += 10;
+        }
+        HttpFactory.getData(url).then(function (result) {
+            if (!result){
+                alert("没有更多数据!");
+                return;
+            }
+            if (!$scope.news.adsArray2.length){
+                if(result[0].ads){
+                    //由于网易新闻有时候除了第一次之外没有头条用个数组存着
+                    $scope.news.adsArray2 = result[0].ads;
+                }
+            }
+            $scope.news.newsArray2 = $scope.news.newsArray2.concat(result);
+            if ($scope.news.index === 0){
+                $scope.news.newsArray2.splice(0,1);
+            }
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+
+        });
+    };
+
+
+}]);
+/**
  * Created by qingyun on 16/11/30.
  */
 angular.module('myApp.personal',[]).config(['$stateProvider',function ($stateProvider) {
@@ -188,38 +325,38 @@ angular.module('myApp.personal',[]).config(['$stateProvider',function ($statePro
  * Created by qingyun on 16/11/30.
  */
 angular.module('myApp.tabs',[]).controller('tabsController',['$scope',function ($scope) {
-    $scope.$on('$stateChangeSuccess',function (evt,current,previous) {
-        var update_wx_title = function(title) {
-            var body = document.getElementsByTagName('body')[0];
-            document.title = title;
-            var iframe = document.createElement("iframe");
-            iframe.setAttribute("src", "../empty.png");
-            iframe.addEventListener('load', function() {
-                setTimeout(function() {
-                    // iframe.removeEventListener('load');
-                    document.body.removeChild(iframe);
-                });
-            });
-            document.body.appendChild(iframe);
-        };
-        switch (current.url){
-            case '/news':
-                update_wx_title("新闻");
-                break;
-            case '/live':
-                update_wx_title("直播");
-                break;
-            case '/topic':
-                update_wx_title("话题");
-                break;
-            case '/personal':
-                update_wx_title("我的");
-                break;
-
-        }
-
-
-    });
+    // $scope.$on('$stateChangeSuccess',function (evt,current,previous) {
+    //     var update_wx_title = function(title) {
+    //         var body = document.getElementsByTagName('body')[0];
+    //         document.title = title;
+    //         var iframe = document.createElement("iframe");
+    //         iframe.setAttribute("src", "../empty.png");
+    //         iframe.addEventListener('load', function() {
+    //             setTimeout(function() {
+    //                 // iframe.removeEventListener('load');
+    //                 document.body.removeChild(iframe);
+    //             });
+    //         });
+    //         document.body.appendChild(iframe);
+    //     };
+    //     switch (current.url){
+    //         case '/news':
+    //             update_wx_title("新闻");
+    //             break;
+    //         case '/live':
+    //             update_wx_title("直播");
+    //             break;
+    //         case '/topic':
+    //             update_wx_title("话题");
+    //             break;
+    //         case '/personal':
+    //             update_wx_title("我的");
+    //             break;
+    //
+    //     }
+    //
+    //
+    // });
 }]);
 /**
  * Created by qingyun on 16/11/30.
@@ -254,7 +391,7 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
                     timeout:20000
                 }).then(function (reslut) {
                     reslut =reslut.data;
-                    reslut = reslut[Object.keys(reslut)[0]];
+                    // reslut = reslut[Object.keys(reslut)[0]];
                     promise.resolve(reslut);
                 },function (err) {
                     promise.reject(err);
@@ -264,18 +401,6 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
         }
     };
 }]);
-/**
- * Created by Administrator on 2016/12/9.
- */
-angular.module('myApp.lunb', []).service('LuboService',[ function ($http) {
-    this.getClassify = function () {
-        return [
-            { name: '热门'},
-            { name: '分类'},
-            { name: '订阅'}
-        ]
-    };
-}])
 /**
  * Created by qingyun on 16/12/2.
  */
@@ -320,3 +445,7 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
         }
     };
 }]);
+/**
+ * Created by qingyun on 16/12/7.
+ */
+angular.module('cftApp.urls',[]).constant('UrlArray',["http://c.m.163.com/recommend/getSubDocPic?from=toutiao&prog=LMA1&open=&openpath=&fn=1&passport=&devId=%2BnrKMbpU9ZDPUOhb9gvookO3HKJkIOzrIg%2BI9FhrLRStCu%2B7ZneFbZ30i61TL9kY&offset=@&size=10&version=17.1&spever=false&net=wifi&lat=&lon=&ts=1480666192&sign=yseE2FNVWcJVjhvP48U1nPHyzZCKpBKh%2BaOhOE2d6GR48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=appstore","http://c.m.163.com/dlist/article/dynamic?from=T1348648517839&offset=@&size=10&fn=7&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639275&sign=ENAtFozNgGugOq3e1UL6hWbkeBqF24b8ECZ%2FOg2OGlZ48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D","http://c.m.163.com/recommend/getChanListNews?channel=T1456112189138&size=10&offset=@&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640855&sign=n%2BRpzwR4DEI0MaavyBhQlpZaxlFxQdWjn0Ty7qOYWaB48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D","http://c.m.163.com/dlist/article/dynamic?from=T1348649079062&offset=@&size=10&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639446&sign=cZqFpGcYxIM23Mk0zlBq8ziD1sRlb1GqZlwcRLb38aZ48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D","http://c.m.163.com/recommend/getSubDocPic?from=netease_h&size=10&offset=@&fn=4&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639599&sign=JIfO0JDD%2Bn9%2BAUDPwiCVNSwML5QPD%2BO1KSZcsmDfw2948ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D","http://c.m.163.com/dlist/article/local/dynamic?from=6YOR5bee&offset=@&size=10&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639679&sign=fibH0nYFS5ZqfhTkz%2Fctkn1b%2B%2B7UaCWuMhwPOm2XAxN48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D","http://c.m.163.com/recommend/getChanListNews?channel=T1457068979049&size=10&offset=@&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639724&sign=uklrBnfDnFoSS86%2B44xw0tzktOhz8ek4D2b6Uh0bXk148ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D","http://c.m.163.com/dlist/article/dynamic?from=T1348648756099&offset=@&size=10&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639780&sign=PqlXEtC2KZaOX7vOO17uHuo4duhmWIxQqoQ4rBKRsQh48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D",'http://c.m.163.com/dlist/article/dynamic?from=T1348649580692&offset=@&size=10&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639824&sign=BENvYqDl9cYKiJh2irUV5%2Biue8PV%2FKHdFs3tQWGzBqd48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/dlist/article/dynamic?from=T1348650593803&offset=@&size=10&fn=1&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639994&sign=L2rYDnEjMRXqgyoBwjDOU9%2FuAlHKEvkGbCcbOw0egKp48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/recommend/getChanListNews?channel=T1419316284722&size=10&offset=@&fn=1&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640349&sign=kuB1wmMK3BIofo29zp1u%2FCelBxwQVclBPY2jLDS6PfV48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/dlist/article/dynamic?from=T1473054348939&offset=@&size=10&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640251&sign=TxI1npNtFDs5QSgpQr%2FOTwXPVB%2FvuqHD5Vj7E5Ul5t948ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/dlist/article/dynamic?from=T1348648141035&offset=@&size=10&fn=1&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640432&sign=LeTem6ZlcSys0TMWqSD%2FkavFP%2BW7CKnHNX3zs%2B6m3l548ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/dlist/article/dynamic?from=T1348654151579&offset=@&size=10&fn=1&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640614&sign=Ey6%2F0Qyd7pxjaaWUoZLQYriGwqX0xzmATqe6CpZ0C2x48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/dlist/article/dynamic?from=T1414389941036&offset=@&size=10&fn=1&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480640649&sign=DXY4efOR3JOAgU6ePvFftxYD41PHsjGxZdWGM5quV0x48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D','http://c.m.163.com/dlist/article/dynamic?from=T1348649145984&offset=@&size=10&fn=2&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480641094&sign=m32ovzEGXTpUeq0kQ%2BXNMNXg9B6bGu2D0vfF3xrFwjF48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D']);

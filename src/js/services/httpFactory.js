@@ -15,7 +15,7 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
                     timeout:20000
                 }).then(function (reslut) {
                     reslut =reslut.data;
-                    reslut = reslut[Object.keys(reslut)[0]];
+                    // reslut = reslut[Object.keys(reslut)[0]];
                     promise.resolve(reslut);
                 },function (err) {
                     promise.reject(err);

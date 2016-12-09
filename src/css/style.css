@@ -70,7 +70,6 @@ html{
 }
 .mybar{
     height: 20rem;
-
 }
 .btn{
     height:3rem;
@@ -90,11 +89,9 @@ html{
 .zyx img{
     width: 30%;
     height: 100%;
-    display: inline-block;
 }
 .zyx span{
-    display: inline-block;
-    margin-left: .5rem;
+    margin-right: 2rem;
 }
 
 /*登录页面*/
@@ -191,4 +188,68 @@ a{
 }
 .myBarLoginDY .item-text-wrap{
     padding: 0;
+}
+
+
+/*直播*/
+.LivePa{
+    margin-top: -.2rem;
+    height: 3rem;
+    text-align: center;
+    padding: 0;
+}
+.LivePa .item{
+    padding: 0rem;
+}
+.LivePa p {
+    /*margin-top: -10px;*/
+    line-height: 3rem;
+
+}
+.LiveP{
+    height:7rem;
+    margin-top: -1rem;
+    overflow: hidden;
+}
+.LiveP a{
+    width: 15rem;
+    height: 15rem;
+    margin-right: 2rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.LiveP img{
+    height:30%;border-radius: 50%;
+}
+
+.classBar1{
+    display: flex;
+}
+.DSAsa .DSAsacc{
+    color: white;
+    line-height: 20rem;
+}
+.DSAsaA{
+    /*outline: 1px red solid ;*/
+    position: absolute;
+    background-color: rgba(82, 75, 75, 0.54);
+    width: 10rem;
+    height: 2rem;
+    left: 2rem;
+    top: 1rem;
+    z-index: 99;
+    border-radius: 1rem ;
+    font-size: 1rem;
+    color: white;
+    /*text-align: center;*/
+}
+.DSAsaA img {
+    position: absolute;
+    left: .6rem;
+    width: 20%;
+}
+.DSAsaAAA{
+    position: absolute;
+    top: 0;
+    left: 3.5rem;
 }
