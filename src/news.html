@@ -1,0 +1,116 @@
+<!--首页-->
+<<<<<<< HEAD
+<ion-view view-title="新闻">
+    <ion-nav-bar class="bar-assertive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+
+
+    <!--导航-->
+        <div class="bar bar-subheader">
+            <ion-scroll class="button-bar"
+                        direction="x"
+                        min-zoom="0.5"
+                        max-zoom="1">
+                <div class="classBar">
+                    <a ng-repeat="num in numArry"  style="white-space:nowrap" class="button1">{{num.tname}}</a>
+                </div>
+            </ion-scroll>
+        </div>
+
+<ion-content delegate-handle="mainScroll">
+
+<!--<div class="bar bar-subheader"></div>-->
+
+    <!--固定返回条-->
+    <div class="scollMainTotop"> <button ng-click="scrollMainToTop()"> 滚动内容到顶部!</button></div>
+
+    <div class="bar-subheader"></div>
+    <!--下拉刷新-->
+    <ion-refresher
+            pulling-text="下拉刷新..."
+            on-refresh="doRefresh()">
+    </ion-refresher>
+    <!--轮播图-->
+    <mg-slide-box source-array="news.adsArray"></mg-slide-box>
+    <!--新闻列表-->
+    <ion-list>
+        <ion-item ng-repeat="item in items" class="zyx" ng-click="doSome($index)">
+            <img ng-src="{{item.imgsrc}}">
+            <span>{{item.title}}</span>
+        </ion-item>
+    </ion-list>
+    <!--上拉加载-->
+    <ion-infinite-scroll
+            on-infinite="loadMore('上拉')"
+            distance="1%"
+            spinner="android"
+            immediate-check="true"
+            ng-if="isShowInfinite">
+    </ion-infinite-scroll>
+</ion-content>
+</ion-view>
+=======
+<ion-slide-box show-pager="false" delegate-handle="mainSlideBox" on-slide-changed="slideChanged($index)" auto-play="false" does-continue="{{isDoesContinue}}" slide-interval="2000">
+    <ion-slide>
+        <ion-view view-title="新闻" ng-controller="newsController">
+            <!--给ion-content添加滑动事件-->
+            <ion-content style="top: 7.9rem"  on-drag-left="onMainSlideDragLeft()" on-drag-right="onMainSlideDragRight()"  on-drag="dragMainSlideOpenSlide()">
+                <ion-refresher
+                        pulling-text="下拉刷新..."
+                        on-refresh="doRefresh()">
+                </ion-refresher>
+                <mg-slide-box source-array="news.adsArray"></mg-slide-box>
+                <ion-item ng-click="goToDetailView()" ng-repeat="item in news.newsArray track by $index">
+                    <img ng-src="{{item.imgsrc}}" style="height: 80px;width: 90px">
+                    <span class="item-text-wrap" style="position: absolute;top: 20px;padding-left: 10px">{{item.title}}</span>
+                </ion-item>
+                <ion-infinite-scroll
+                        on-infinite="loadMore()"
+                        distance="1%">
+                </ion-infinite-scroll>
+            </ion-content>
+        </ion-view>
+    </ion-slide>
+    <ion-slide>
+        <ion-view view-title="新闻" ng-controller="newsController1">
+            <!--给ion-content添加滑动事件-->
+            <ion-content style="top: 7.9rem"  on-drag-left="onMainSlideDragLeft()" on-drag-right="onMainSlideDragRight()"  on-drag="dragMainSlideOpenSlide()">
+                <ion-refresher
+                        pulling-text="下拉刷新..."
+                        on-refresh="doRefresh1()">
+                </ion-refresher>
+                <mg-slide-box source-array="news.adsArray1"></mg-slide-box>
+                <ion-item ng-repeat="item in news.newsArray1 track by $index">
+                    <img ng-src="{{item.imgsrc}}" style="height: 80px;width: 90px">
+                    <span class="item-text-wrap" style="position: absolute;top: 20px;padding-left: 10px">{{item.title}}</span>
+                </ion-item>
+                <ion-infinite-scroll
+                        on-infinite="loadMore1()"
+                        distance="1%">
+                </ion-infinite-scroll>
+            </ion-content>
+        </ion-view>
+    </ion-slide>
+    <ion-slide>
+        <ion-view view-title="新闻" ng-controller="newsController2">
+            <!--给ion-content添加滑动事件-->
+            <ion-content style="top: 7.9rem" on-drag-left="onMainSlideDragLeft()" on-drag-right="onMainSlideDragRight()"  on-drag="dragMainSlideOpenSlide()">
+                <ion-refresher
+                        pulling-text="下拉刷新..."
+                        on-refresh="doRefresh2()">
+                </ion-refresher>
+                <mg-slide-box source-array="news.adsArray2"></mg-slide-box>
+                <ion-item ng-repeat="item in news.newsArray2 track by $index">
+                    <img ng-src="{{item.imgsrc}}" style="height: 80px;width: 90px">
+                    <span class="item-text-wrap" style="position: absolute;top: 20px;padding-left: 10px">{{item.title}}</span>
+                </ion-item>
+                <ion-infinite-scroll
+                        on-infinite="loadMore2()"
+                        distance="1%">
+                </ion-infinite-scroll>
+            </ion-content>
+        </ion-view>
+    </ion-slide>
+</ion-slide-box>
+>>>>>>> 12e160d2a60b78cc5deb7788c7a4cbdb105df7c8

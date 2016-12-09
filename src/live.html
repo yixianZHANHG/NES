@@ -1,0 +1,39 @@
+<!--直播-->
+<ion-view>
+<div class="bar bar-assertive">
+
+<<<<<<< HEAD
+</div>
+    <ion-content class="has-header">
+        <ion-slide-box show-pager="false" class="has-header" on-slide-changed="slideChanged($index)">
+            <ion-slide ng-repeat="slide in slides">
+                <div class="list">
+                    <ion-refresher
+                            pulling-text="下拉刷新..."
+                            on-refresh="doRefresh()">
+                    </ion-refresher>
+                    <a ng-repeat="item in items" class="item item-thumbnail-right item-text-wrap" href="#">
+                        <img ng-src="{{item.imgsrc}}">
+                        <span>{{item.title}}</span>
+                        <p>{{item.interest}}</p>
+                    </a>
+                    <ion-infinite-scroll
+                            on-infinite="loadMore('上拉')"
+                            distance="1%"
+                            spinner="android"
+                            immediate-check="true"
+                            ng-if="isShowInfinite">
+                    </ion-infinite-scroll>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+=======
+
+    <ion-content>
+        <h1>直播</h1>
+>>>>>>> 12e160d2a60b78cc5deb7788c7a4cbdb105df7c8
+    </ion-content>
+    <ion-tabs class="tabs-striped tabs-top">
+        <ion-tab ng-repeat="item in tabs" on-select="selectedTab($index)" title="{{item.name}}"></ion-tab>
+    </ion-tabs>
+</ion-view>

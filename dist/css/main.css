@@ -1,0 +1,205 @@
+
+@media all and (max-width: 480px){
+
+    .topCarouselImg{
+        height: 18rem;
+        width: 100%;
+    }
+}
+@media all and (min-width: 480px){
+    .topCarouselImg{
+        height: 24rem;
+        width: 100%;
+    }
+    /*.view-container{*/
+    /*width: 48rem;*/
+    /*}*/
+
+}
+html{
+    font-size: 62.5%;
+}
+.topCarousel{
+    position: relative;
+    width: 100%;
+
+}
+.topCarousel .slider-pager{
+    text-align: right;
+    padding-right: 2rem;
+    padding-top: .5rem;
+    /*height: 3rem;*/
+}
+
+.topCarousel .slider-pager-page{
+    width: .2rem;
+}
+.slider-pager .slider-pager-page {
+    opacity: .1;
+}
+.topCarousel .ion-record::before{
+    content: '•';
+}
+.topCarousel .ion-record{
+    font-size: 1.8rem;
+    color: white;
+}
+/*.topCarousel .ion-record{*/
+    /*position: relative;*/
+    /*bottom: -2rem;*/
+    /*right: 2rem;*/
+    /*display: block;*/
+    /*width: .5rem;*/
+    /*height: .5rem;*/
+    /*border-radius: 50%;*/
+    /*background-color: red;*/
+/*}*/
+.slideBottomDiv{
+    position: absolute;
+    padding-left: 1.5rem;
+    bottom: .6rem;
+    width: 100%;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    height: 3rem;
+    background-color: rgba(0,0,0,.3);
+    color: white;
+}
+.popup-buttons{
+    border-top: solid 1px #d1d3d6;
+    padding: 0;
+    min-height: 0;
+}
+
+.popup-container .popup{
+    width: 80%;
+    border-radius: 6px;
+}
+.button.button-dark.button-clear{
+    border-right: solid 1px #d1d3d6;
+
+}
+.mybar{
+    height: 20rem;
+
+}
+.btn{
+    height:3rem;
+    margin-top: 8rem;
+}
+.myfont{
+    font-size: .3rem;
+}
+.classBar{
+    display: flex;
+    line-height: 3.6rem;
+    flex-flow: row nowrap;
+}
+.button1{
+    margin-left: 1rem;
+}
+.zyx img{
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+}
+.zyx span{
+    display: inline-block;
+    margin-left: .5rem;
+}
+
+/*登录页面*/
+.scollMainTotop{
+    top: 50%;
+    z-index: 9;
+    width: 2rem;
+    height: 1rem;
+    background-color: #4b8bf4;
+    position: fixed;
+}
+.myBar{
+    height: 25%;
+    background-color: #ef473a;
+}
+.newCon img{
+    width: 100%;
+    height: 100%;
+}
+.newConTitle{
+    padding: 1rem;
+    text-align: center;
+    font-family: 黑体;
+}
+
+/*我的页面*/
+a{
+    text-decoration: none;
+}
+.myBarLogin{
+    position: absolute;
+    top:6%;
+}
+.myBarLoginLG{
+    background-color: white;
+    text-align: center;
+    border-radius: .3rem;
+}
+.myBarLoginLG a {
+    color: red;
+}
+.myBarLoginZC{
+    color: white;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+.myBarLoginDL{
+    border: .1rem lavender solid;
+    text-align: center;
+    margin-right: -2.5rem;
+    border-radius: 2rem;
+    color: white;
+}
+.myBarLoginFX{
+    position: absolute;
+    top:16%;
+    text-align: center;
+    color: white;
+}
+.myBarLoginFXWB{
+   border-left: .1rem solid white;
+    border-right: white .1rem solid;
+}
+.myBarLoginCARD{
+    margin-top: -2rem;
+    padding: 0;
+    height: 6%;
+}
+
+.myBarLoginCARDq{
+    text-align: center;
+}
+.myBarLoginCARDq a{
+    color: darkgray;
+}
+.myBarLoginCARD .myBarLoginCARDq .Row{
+    margin-top: -1.5rem;
+}
+.myBarLoginCARD .myBarLoginCARDq .Row .RowMy{
+    border-right: 1px solid gainsboro;
+}
+.myBarLoginDY{
+    text-align: center;
+}
+.myBarLoginDY .item .row .col>a{
+    display: block;
+    margin-top: -1.1rem;
+}
+.myBarLoginDY .item .row .col{
+    border-right: 1px solid gainsboro;
+}
+.myBarLoginDY .item .row #COL{
+    border: none;
+}
+.myBarLoginDY .item-text-wrap{
+    padding: 0;
+}
