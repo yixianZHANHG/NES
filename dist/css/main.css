@@ -95,18 +95,8 @@ html{
 }
 
 /*登录页面*/
-.scollMainTotop{
-    top: 50%;
-    z-index: 9;
-    width: 2rem;
-    /*height: 1rem;*/
-    background-color: #4b8bf4;
-    position: fixed;
-}
- .myBarLogin .dddd .row .button{
-    min-height:0;
-    line-height:0;
-     background-color: #ef473a;
+#aa{
+    background-color: antiquewhite;
 }
 .myBar{
     height: 25%;
@@ -121,8 +111,48 @@ html{
     text-align: center;
     font-family: 黑体;
 }
+.divSs{
+    outline: 1px red solid ;
+    display: inline-block;
+    /*margin-top: 20px;*/
+}
+/*我的消息颜色*/
+.ion-android-notifications-none:before{
+    color: red;
+}
+/*最新动态*/
+.ion-android-textsms:before{
+    color: red;
+}
+/*内容下拉框*/
+.ionScroll{
+    margin-top:28.5rem;
+    z-index: 1;
+}
+/*系统颜色控制器*/
+.toggle .track{
+    height: 0;
+    /*display: inline-block;*/
+}
+.toggle input:checked+.track .handle{
+    background-color:#ef473a;
+}
+ol, ul{
+    margin-top: -.5rem;
+}
+.toggle .handle{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2.5rem;
+    /*margin-top: .rem;*/
+}
+/*我的钱包*/
+.sPanP{
+    display: inline;
+    margin-right: .3rem;
+}
 
-/*我的页面*/
+/*我的页面!!!!*/
 a{
     text-decoration: none;
 }
@@ -137,6 +167,7 @@ a{
 }
 .myBarLoginLG a {
     color: red;
+
 }
 .myBarLoginZC{
     color: white;
