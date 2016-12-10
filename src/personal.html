@@ -14,7 +14,7 @@
                 </div>
                 <div class="col dddd">
                     <div class="row">
-                        <div class="col myBarLoginDL"><i class="ion-calendar"></i>签到</div>
+                        <div class="col button myBarLoginDL" ng-click="openDatePicker()"><i class="ion-calendar"></i>签到</div>
                     </div>
                 </div>
             </div>
@@ -36,21 +36,57 @@
         <div class="card myBarLoginDY">
             <div class="item item-text-wrap">
                 <div class="row">
-                    <div class="col col-25"> <i class=" ion-gear-a"></i>
-                        <a class="button button-clear button-stable" href="#/tabs/my">订阅</a></div>
+                    <div class="col col-25">
+                        <i class=" ion-ios-bookmarks"></i>
+                        <a class="button button-clear button-stable" href="#/tabs/my">订阅</a>
+                    </div>
                     <div class="col"> <i class="ion-ios-heart "></i><a class="button button-clear button-stable" href="#/tabs/my"> 收藏</a>
                        </div>
                     <div class="col"> <i class="ion-ios-compose "></i><a class="button button-clear button-stable" href="#/tabs/my">跟帖</a>
                         </div>
-                    <div class="col" id="COL"> <i class="ion-chatbox "></i><a class="button button-clear button-stable" href="#/tabs/my">阅读</a>
+                    <div class="col" id="COL"> <i class="ion-ios-clock "></i><a class="button button-clear button-stable" href="#/tabs/my">阅读</a>
                         </div>
                 </div>
             </div>
         </div>
-        <ion-scroll class="ionScroll">
-            <div class="card ionScrollCard">
-                <div class="item item-text-wrap ionScrollCardS">
 
+        <ion-scroll class="ionScroll SCrllas">
+            <div class="card ionScrollCard">
+                <div class="item item-text-wrap ionScrollCardS ">
+                    <div>
+                        <i class="ion-chatbox "></i> 我的消息<span><i class="ion-ios-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="item item-text-wrap ionScrollCardS">
+                    <i class="ion-chatbox "></i> 最新动态<span><i class="ion-ios-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <div class="card ionScrollCard">
+                <div class="item item-text-wrap ionScrollCardS ">
+                    <div>
+                        <i class="ion-chatbox "></i> 金币商城<span><i class="ion-ios-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="item item-text-wrap ionScrollCardS">
+                    <i class="ion-chatbox "></i> 我的钱包<span>头条集卡赢vivo X9 <i class="ion-ios-arrow-right"></i></span>
+                </div>
+                <div class="item item-text-wrap ionScrollCardS">
+                    <i class="ion-chatbox "></i> 金币任务<span><i class="ion-ios-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <div class="card ionScrollCard">
+                <div class="item item-text-wrap ionScrollCardS ">
+                    <div>
+                        <i class="ion-chatbox "></i> 夜间模式<span><i class="ion-ios-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="item item-text-wrap ionScrollCardS">
+                    <i class="ion-chatbox "></i> 活动广场<span><i class="ion-ios-arrow-right"></i></span>
+                </div>
+                <div class="item item-text-wrap ionScrollCardS">
+                    <i class="ion-chatbox "></i> 意见反馈<span><i class="ion-ios-arrow-right"></i></span>
                 </div>
             </div>
         </ion-scroll>

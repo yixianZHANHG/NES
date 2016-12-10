@@ -99,9 +99,14 @@ html{
     top: 50%;
     z-index: 9;
     width: 2rem;
-    height: 1rem;
+    /*height: 1rem;*/
     background-color: #4b8bf4;
     position: fixed;
+}
+ .myBarLogin .dddd .row .button{
+    min-height:0;
+    line-height:0;
+     background-color: #ef473a;
 }
 .myBar{
     height: 25%;
@@ -188,6 +193,9 @@ a{
 }
 .myBarLoginDY .item-text-wrap{
     padding: 0;
+}
+.SCrllas .ionScrollCard span{
+    float: right;
 }
 
 
