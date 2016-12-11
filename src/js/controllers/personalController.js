@@ -45,31 +45,17 @@ angular.module('myApp.personal',['ionic-datepicker']).config(['$stateProvider','
         ionicDatePicker.openDatePicker(ipObj1);
     };
 
-    // var a =1 ;
-    $scope.changColor = function (event) {
-        //
-        // $ionicBackdrop.retain();
-        // $timeout(function() {
-        //     $ionicBackdrop.release();
-        // }, 1000);
-        var a = document.querySelectorAll('html');
-        console.log(a);
-        a[0].style.backgroundColor = 'gray'
-
-
-        // a++;
-        // console.log(event.path);
-        // console.log(event.path[13].style);
+    var a =1 ;
+    $scope.changColor = function () {
+        a++;
         // 4 通过样式表
-        // console.log(a);
-        // var coloe = document.getElementById("aa");
-        // if(a%2==0){
-        //     coloe.style.backgroundColor = 'gray';
-        //     console.log(33333333333333);
-        //
-        // }else {
-        //     coloe.style.backgroundColor = "antiquewhite";
-        //     console.log(4444444444444);
-        // }
+        console.log(a);
+        var coloe = document.getElementById("aa");
+        if(a%2==0){
+            $ionicBackdrop.retain();
+        }else {
+            $ionicBackdrop.release();
+            coloe.style.backgroundColor = "antiquewhite";
+        }
     }
 }]);

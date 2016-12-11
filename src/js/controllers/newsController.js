@@ -24,7 +24,7 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
         newsArray:'',
         adsArray:[]
     };
-    var url = "http://c.3g.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10";
+    var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
     HttpFactory.getData(url).then(function (result) {
         $scope.news.newsArray = result;
         $scope.news.adsArray = result.T1348647909107[0].ads;

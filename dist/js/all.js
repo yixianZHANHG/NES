@@ -32,29 +32,32 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
 }]).controller('liveController',['$scope','$ionicSlideBoxDelegate','HttpFactory',function ($scope,$ionicSlideBoxDelegate,HttpFactory) {
     // 轮播图
     $scope.news = {
-        newsArray1:'',
         adsArray1:[]
     };
-    var url = "http://c.3g.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10";
+    var url = "http://data.live.126.net/livechannel/previewlist.json";
     HttpFactory.getData(url).then(function (result) {
-        $scope.news.newsArray1 = result;
-        $scope.news.adsArray1 = result.T1348647909107[0].ads;
-    });
+        // console.log(result);
+        var img_title_Array = [];
+        if(result.top.length){
+            for(var i =0;i<result.top.length;i++){
+                var obj = {
+                    titile:result.top[i].roomName,
+                    imgsrc:result.top[i].image
+                };
+                img_title_Array.push(obj);
+            }
+            // console.log(img_title_Array);
+            $scope.news.adsArray1 = img_title_Array;
+        }
 
-    // 预告
-   var url ='http://data.live.126.net/livechannel/previewlist.json';
-    HttpFactory.getData(url).then(function (result) {
-        console.log(result)
         $scope.imas = result.future;
         $scope.itema = result.sublives;
         $scope.imad = result.live_review;
         $scope.imada = result.live_review[0].sourceinfo;
-        console.log($scope.imada.timg);
-        console.log($scope.imada.tname);
-
-
-
+        // $scope.news.adsArray1 = result.ads;
     });
+
+
 }]);
 /**
  * Created by Administrator on 2016/12/6.
@@ -140,7 +143,7 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
         newsArray:'',
         adsArray:[]
     };
-    var url = "http://c.3g.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10";
+    var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
     HttpFactory.getData(url).then(function (result) {
         $scope.news.newsArray = result;
         $scope.news.adsArray = result.T1348647909107[0].ads;
@@ -352,70 +355,25 @@ angular.module('myApp.personal',['ionic-datepicker']).config(['$stateProvider','
         ionicDatePicker.openDatePicker(ipObj1);
     };
 
-    // var a =1 ;
-    $scope.changColor = function (event) {
-        //
-        // $ionicBackdrop.retain();
-        // $timeout(function() {
-        //     $ionicBackdrop.release();
-        // }, 1000);
-        var a = document.querySelectorAll('html');
-        console.log(a);
-        a[0].style.backgroundColor = 'gray'
-
-
-        // a++;
-        // console.log(event.path);
-        // console.log(event.path[13].style);
+    var a =1 ;
+    $scope.changColor = function () {
+        a++;
         // 4 通过样式表
-        // console.log(a);
-        // var coloe = document.getElementById("aa");
-        // if(a%2==0){
-        //     coloe.style.backgroundColor = 'gray';
-        //     console.log(33333333333333);
-        //
-        // }else {
-        //     coloe.style.backgroundColor = "antiquewhite";
-        //     console.log(4444444444444);
-        // }
+        console.log(a);
+        var coloe = document.getElementById("aa");
+        if(a%2==0){
+            $ionicBackdrop.retain();
+        }else {
+            $ionicBackdrop.release();
+            coloe.style.backgroundColor = "antiquewhite";
+        }
     }
 }]);
 /**
  * Created by qingyun on 16/11/30.
  */
 angular.module('myApp.tabs',[]).controller('tabsController',['$scope',function ($scope) {
-    // $scope.$on('$stateChangeSuccess',function (evt,current,previous) {
-    //     var update_wx_title = function(title) {
-    //         var body = document.getElementsByTagName('body')[0];
-    //         document.title = title;
-    //         var iframe = document.createElement("iframe");
-    //         iframe.setAttribute("src", "../empty.png");
-    //         iframe.addEventListener('load', function() {
-    //             setTimeout(function() {
-    //                 // iframe.removeEventListener('load');
-    //                 document.body.removeChild(iframe);
-    //             });
-    //         });
-    //         document.body.appendChild(iframe);
-    //     };
-    //     switch (current.url){
-    //         case '/news':
-    //             update_wx_title("新闻");
-    //             break;
-    //         case '/live':
-    //             update_wx_title("直播");
-    //             break;
-    //         case '/topic':
-    //             update_wx_title("话题");
-    //             break;
-    //         case '/personal':
-    //             update_wx_title("我的");
-    //             break;
-    //
-    //     }
-    //
-    //
-    // });
+
 }]);
 /**
  * Created by qingyun on 16/11/30.
@@ -430,7 +388,15 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
             }
         }
     });
-}]).controller('topicController',['$scope',function ($scope) {
+}]).controller('topicController',['$scope','HttpFactory',function ($scope,HttpFactory) {
+    // 预告
+    var url ='http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-10.html';
+    HttpFactory.getData(url).then(function (result) {
+        // console.log(result);
+        $scope.items = result.data.expertList;
+        console.log($scope.items);
+        // console.log( $scope.items[0].alias);
+    });
 
 }]);
 /**

@@ -95,8 +95,9 @@ html{
 }
 
 /*登录页面*/
-#aa{
-    background-color: antiquewhite;
+
+.backdrop{
+    pointer-events: none;
 }
 .myBar{
     height: 25%;
@@ -188,7 +189,7 @@ a{
     color: white;
 }
 .myBarLoginFXWB{
-   border-left: .1rem solid white;
+    border-left: .1rem solid white;
     border-right: white .1rem solid;
 }
 .myBarLoginCARD{
@@ -291,4 +292,15 @@ a{
     position: absolute;
     top: 0;
     left: 3.5rem;
+}
+
+/*话题*/
+.card .TopickImg{
+    height: 3rem;
+    width: 3rem;
+}
+.card .TopickImg img{
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
 }
