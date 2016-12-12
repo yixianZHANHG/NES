@@ -42,7 +42,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
             HttpFactory.getData(url).then(function (result) {
                 // console.log(result)
                 $scope.items = $scope.items.concat(result.tid);
-                console.log(2222222);
+                console.log($scope.items);
+                console.log(result.tid);
                 // console.log( $scope.items);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             });
@@ -57,7 +58,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
      var url =  'http://c.m.163.com/recommend/getSubDocPic?from=toutiao&offset=0&size=10';
         HttpFactory.getData(url).then(function (result) {
             $scope.items = result.tid;
-            console.log(11111);
+            // console.log(11111);
+            // console.log(result.tid);
             $scope.isShowInfinite = true;
             indexd = 10;
             // console.log( $scope.items);

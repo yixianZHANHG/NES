@@ -46,16 +46,13 @@ angular.module('myApp.personal',['ionic-datepicker']).config(['$stateProvider','
     };
 
     var a =1 ;
+    // (a%2==0)?$ionicBackdrop.retain(): $ionicBackdrop.release();
     $scope.changColor = function () {
         a++;
-        // 4 通过样式表
-        console.log(a);
-        var coloe = document.getElementById("aa");
         if(a%2==0){
             $ionicBackdrop.retain();
         }else {
             $ionicBackdrop.release();
-            coloe.style.backgroundColor = "antiquewhite";
         }
     }
 }]);
