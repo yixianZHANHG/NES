@@ -1,0 +1,64 @@
+
+
+<ion-view view-title="topicOne">
+    <!--<ion-header-bar class="bar-assertive">-->
+        <!--<a class="button button-clear icon ion-chevron-left" href="#/tabs/news" nav-direction="back"></a>-->
+    <!--</ion-header-bar>-->
+    <ion-content class="topicContent">
+
+                <div class="TOPICdiv">
+                    <img ng-src="{{items.picurl}}">
+                    <div class="TOPICdivC" >
+                        <div class="TOPICdivCa">
+                            {{items.alias}}
+                        </div>
+                    </div>
+                    <div class="card topickKarB" >
+                        <div class="topickKard">
+                            <div class="topickKarda">
+                                <div class="topickKardc">
+                                    <img ng-src="{{items.headpicurl}}" >
+                                </div>
+                            </div>
+                            <div class="topickKardb">
+                            <p>{{items.name}}|{{items.title}}</p>
+                            <p>
+                                {{items.description}}
+                            </p>
+                        </div>
+                        </div>
+                       <div class="button button-clear button-small button-positive" ng-click="changHight()">
+                           <i class="ion-ios-arrow-up"></i>
+                       </div>
+                    </div>
+                </div>
+              <div>
+                  <div class="topicCard">
+                      <div class="card ">
+                          <span style="padding-left: 10px">相关新闻</span>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <ion-list ng-repeat="em in imada">
+                          <ion-item class="Cardion" ng-click="">
+                              <p>{{em.title}}</p>
+                          </ion-item>
+                      </ion-list>
+                  </div>
+              </div>
+                <div class="topicCard">
+                    <div class="card ">
+                       <div>
+                           <span> 760提问.1回复</span>
+
+                       </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+    </ion-content>
+</ion-view>

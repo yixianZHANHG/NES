@@ -260,7 +260,8 @@ a{
     text-align: center;
 }
 .LiveP img{
-    height:30%;border-radius: 50%;
+    height:30%;
+    border-radius: 50%;
 }
 
 .classBar1{
@@ -286,6 +287,7 @@ a{
 }
 .DSAsaA img {
     position: absolute;
+    border-radius: 50%;
     left: .6rem;
     width: 20%;
 }
@@ -296,6 +298,18 @@ a{
 }
 
 /*话题*/
+/*.topicTitleDiv{*/
+    /*display: flex;*/
+
+/*}*/
+.topicCard{
+    height: 70px;
+}
+/*.topicTitleDiv{*/
+    /*width: 100px;*/
+    /*height: 70px;*/
+    /*background-color: #0a9dc7;*/
+/*}*/
 .card .TopickImg{
     height: 3rem;
     width: 3rem;
@@ -311,4 +325,87 @@ a{
 .TopickImga img{
     width: 100%;
     height: 10%;
+}
+
+/*话题详情页*/
+.topicContent{
+    background-color: rgba(225, 225, 225, 0.98);
+}
+.topicContent .card{
+    margin: 10px 10px;
+}
+/*.TOPICdiv{*/
+    /*!*background-color: #9e9e9e;*!*/
+    /*height: 20rem;*/
+    /*width: 100%;*/
+/*}*/
+.TOPICdiv img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.TOPICdiv .TOPICdivC{
+    background-color: rgba(0, 0, 0, 0.3);
+    height:21rem;
+    width:100%;
+    position: absolute;
+    top: 0rem;
+    text-align: -webkit-center;
+}
+
+.TOPICdivCa{
+    height:10rem;
+    width:80%;
+    margin-top: 6rem;
+    text-align: center;
+    color: white;
+    /*background-color: #0c60ee;*/
+}
+
+.TOPICdiv .card{
+    text-align: center;
+    margin: 5px 10px;
+
+}
+.topickKard{
+    display: flex;
+    height: 100px;
+    overflow: hidden;
+    /*background-color: #0c60ee;*/
+    transition: all 2s;
+}
+.topickKarda{
+
+    /*margin-left: 1rem;*/
+    width: 100%;
+    display: inline-block;
+    padding:3%;
+    /*background-color: #0c60ee;*/
+
+}
+.topickKardb{
+    text-align: left;
+    /*background-color: red;*/
+    font-size: 1.3rem;
+    display: inline-block;
+    padding:3%;
+    line-height: 2.5rem;
+
+}
+.topickKardc img{
+   border-radius: 50%;
+}
+.topicContent .topicCard .card{
+    background-color: rgba(225, 225, 225, 0.98);
+    box-shadow: 10px 30px rgba(0,0,0,0);
+}
+
+.topicContent .card .Cardion{
+    border-bottom: 1px solid gainsboro;
+    /*width: 95%;*/
+    margin: auto;
+}
+.topicContent span{
+   padding-left: 10px
 }

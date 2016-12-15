@@ -35,12 +35,13 @@
             <ion-item  style='background: url("{{ite.image}}");background-size: 100%;height: 150px' ng-repeat="ite in imad">
                 <!--<span ng-repeat="">{{ite.sourceinfo.tname}}</span>-->
                 <span class="DSAsacc">{{ite.roomName}}</span>
+                <div class="DSAsaA">
+                    <img ng-src="{{ite.sourceinfo.timg}}">
+                    <span class="DSAsaAAA">
+                     {{ite.sourceinfo.tname}}
+                    </span>
+                </div>
             </ion-item>
-
-            <div class="DSAsaA">
-                <img ng-src="{{imada.timg}}">
-                <span class="DSAsaAAA">{{imada.tname}}</span>
-            </div>
 
 
         </ion-list>

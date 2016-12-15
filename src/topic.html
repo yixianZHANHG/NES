@@ -1,17 +1,34 @@
 <!--加盟店-->
-<ion-view>
+<ion-view view-title="话题">
 <ion-nav-bar class="bar-assertive" title="话题">
     <ion-nav-back-button></ion-nav-back-button>
 </ion-nav-bar>
 
     <ion-content>
+
         <ion-refresher
                 pulling-text="下拉刷新..."
                 on-refresh="doRefresh()">
         </ion-refresher>
+
+        <div class="card topicCard" style="text-align: center">
+            <div class="row row-wrap"  >
+                <div class="col  col-20" ng-repeat="its in item">
+                    <div class="button"style="line-height:20px;background-color: white;border: 0px;" ng-click="ddd()">
+                        <img ng-src="{{its.icon}}" style="width: 100%">
+                        {{its.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="button button-clear button-small button-positive" ng-click="changHight()">
+                <i class="ion-ios-arrow-up"></i>
+            </div>
+        </div>
+
+
        <ion-list>
-               <div class="card" ng-repeat="item in items">
-                   <div>
+               <div class="card" ng-repeat="item in items" >
+                   <div  ng-click="doSome($index)">
                        <span class="TopickImg"><img ng-src="{{item.headpicurl}}"></span>
                        <span>{{item.name}}/{{item.title}}</span>
                    </div>
@@ -23,12 +40,11 @@
                    </div>
                </div>
        </ion-list>
+        <!--<button ng-click="loadMore()">dianm</button>-->
             <ion-infinite-scroll
                     on-infinite="loadMore()"
-                    distance="1%"
+                    distance="0%"
                     icon="ion-loading-c">
-
-
             </ion-infinite-scroll>
     </ion-content>
 

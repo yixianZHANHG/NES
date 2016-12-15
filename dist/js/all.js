@@ -2,7 +2,7 @@
  * Created by qingyun on 16/11/30.
  */
 //js程序入口
-angular.module('myApp',['ionic','myApp.httpFactory','myApp.slideBox','myApp.tabs','myApp.news','myApp.live','myApp.topic','myApp.personal','myApp.my','myApp.newCon','ionic-datepicker']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+angular.module('myApp',['ionic','myApp.httpFactory','myApp.slideBox','myApp.tabs','myApp.news','myApp.live','myApp.topic','myApp.personal','myApp.my','myApp.newCon','ionic-datepicker','myApp.topicOne']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     $ionicConfigProvider.views.transition('ios');
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.navBar.alignTitle('center');
@@ -46,15 +46,15 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
                 };
                 img_title_Array.push(obj);
             }
-            // console.log(img_title_Array);
             $scope.news.adsArray1 = img_title_Array;
         }
 
         $scope.imas = result.future;
         $scope.itema = result.sublives;
+        // console.log(result.sublives);
         $scope.imad = result.live_review;
-        $scope.imada = result.live_review[0].sourceinfo;
-        // $scope.news.adsArray1 = result.ads;
+        console.log($scope.imad);
+
     });
 
 
@@ -161,8 +161,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
             HttpFactory.getData(url).then(function (result) {
                 // console.log(result)
                 $scope.items = $scope.items.concat(result.tid);
-                console.log($scope.items);
-                console.log(result.tid);
+                // console.log($scope.items);
+                // console.log(result.tid);
                 // console.log( $scope.items);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             });
@@ -193,66 +193,11 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     };
     $scope.doSome = function (index) {
         var zyx = $scope.items[index].docid;
-        console.log(zyx);
+        console.log($scope.items[index]);
         $state.go('newCon',{data:zyx});
-        $ionicViewSwitcher.nextDirection('forward');
+        // $ionicViewSwitcher.nextDirection('forward');
+
     }
-}]);
-/**
- * Created by qingyun on 16/12/7.
- */
-
-angular.module('cftApp.news1',[]).controller('newsController1',['$scope','$ionicPopup','$ionicSlideBoxDelegate','$state','HttpFactory','UrlArray',function ($scope,$ionicPopup,$ionicSlideBoxDelegate,$state,HttpFactory,UrlArray) {
-    $scope.news = {
-        newsArray1:[],
-        adsArray1:[],
-        index:0
-    };
-    $scope.$on('updateNews1',function (evt,msg) {
-        $scope.news.adsArray1 = [];
-        $scope.news.newsArray1 = [];
-        $scope.news.index = 0;
-        console.log('view1,' + msg);
-        if(msg == "清理"){
-            return;
-        }
-        $scope.loadMore1(UrlArray[msg]);
-    });
-    $scope.loadMore1 = function (str) {
-        var url = '';
-        if (str){
-            url = str;
-            url = url.replace('@',$scope.news.index);
-
-        }else {
-            url = "http://c.m.163.com/dlist/article/dynamic?from=T1348648517839&offset=" + $scope.news.index + "&size=10&fn=7&passport=&devId=XTl7WnrkEuBfasUNdPC49g%3D%3D&lat=&lon=&version=17.2&net=wifi&ts=1480639275&sign=ENAtFozNgGugOq3e1UL6hWbkeBqF24b8ECZ%2FOg2OGlZ48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=oppo_store2014_news&mac=0qxu7nRwUAReuUxKr3NiFzDz%2FWJ7EEOtyLA2BsvQqp8%3D";
-        }
-        if ($scope.news.index === 0){
-            $scope.news.index += 11;
-        }else {
-            $scope.news.index += 10;
-        }
-        HttpFactory.getData(url).then(function (result) {
-            if (!result){
-                alert("没有更多数据!");
-                return;
-            }
-            if (!$scope.news.adsArray1.length){
-                if(result[0].ads){
-                    //由于网易新闻有时候除了第一次之外没有头条用个数组存着
-                    $scope.news.adsArray1 = result[0].ads;
-                }
-            }
-            $scope.news.newsArray1 = $scope.news.newsArray1.concat(result);
-            if ($scope.news.index === 0){
-                $scope.news.newsArray1.splice(0,1);
-            }
-            $scope.$broadcast('scroll.infiniteScrollComplete');
-
-        });
-    };
-
-
 }]);
 /**
  * Created by qingyun on 16/12/7.
@@ -387,43 +332,95 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
             }
         }
     });
-}]).controller('topicController',['$scope','$ionicLoading','HttpFactory',function ($scope,$ionicLoading,HttpFactory) {
+}]).controller('topicController',['$scope','$ionicLoading','$state','$ionicViewSwitcher','HttpFactory',function ($scope,$ionicLoading,$state,$ionicViewSwitcher,HttpFactory) {
+
+    // 标题
+    var urla = 'http://c.m.163.com/newstopic/list/classification.html';
+    $scope.item= '';
+    HttpFactory.getData(urla).then(function (result) {
+        console.log(result);
+        $scope.item =result.data;
+    });
     // 预告
     var index =0;
-    var url ='http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-'+index+'.html';
-
-        // 上拉加载
     $scope.items = [];
+        // 上拉加载
     $scope.loadMore = function() {
-        // $scope.isShowInfinite = true;
-      if(index<=20){
 
-          index +=10;
-          var url = 'http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-'+index+'.html';
+            var url = 'http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/'+index+'-10.html';
           HttpFactory.getData(url).then(function (result) {
-
-              console.log(result.data);
-              //一共就20个  没了  不用concat 恩
-              $scope.items = result.data.expertList;
+              index +=10;
+              $scope.items =$scope.items.concat(result.data.expertList);
               $scope.$broadcast('scroll.infiniteScrollComplete');
           });
-      }else {
-         index=0;
-          console.log("到底啦!!");
-      }
 
     };
 
     // 下拉刷新
     $scope.doRefresh = function () {
-        $scope.isShowInfinite = true;
+        var url = 'http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-10.html';
         HttpFactory.getData(url).then(function (result) {
-            $scope.items = result.data.expertList;
+            $scope.items =$scope.items.concat(result.data.expertList);
         }).finally(function() {
             $scope.$broadcast('scroll.refreshComplete');
         });
 
     };
+    // 详情页面跳转
+    $scope.doSome = function (index) {
+        var zyx = $scope.items[index].expertId;
+        $state.go('topicOne',{data:zyx});
+    }
+$scope.ddd =function () {
+    console.log("ddddddd")
+};
+$scope.changHight = function () {
+    var car = document.querySelector('.topicCard')
+    // console.log(car);
+    if(car.style.height == '70px'){
+        car.style.height = '100px';
+    }else {
+        car.style.height = '70px';
+    }
+}
+
+}]);
+/**
+ * Created by Administrator on 2016/12/14.
+ */
+angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('topicOne',{
+                url:'/topicOne',
+                templateUrl:'topicOne.html',
+                controller:'topicOneController',
+                 params:{'data':null}
+
+    });
+
+}]).controller('topicOneController',['$scope','$stateParams','$sce','HttpFactory',function ($scope,$stateParams,$sce,HttpFactory) {
+
+      // console.log($stateParams);
+     var ull = $stateParams.data;
+     var url = "http://c.m.163.com/newstopic/qa/"+ull+".html";
+    var items = [];
+    var imada = [];
+  HttpFactory.getData(url).then(function (result) {
+      $scope.item = result.data;
+      $scope.items =  $scope.item.expert;
+      // console.log($scope.item.expert);
+      $scope.imada = $scope.items.relatedNews;
+      console.log($scope.items.relatedNews);
+
+  });
+    $scope.changHight = function () {
+        var car = document.querySelector('.topickKard')
+        // console.log(car);
+        if(car.style.height == '275px'){
+            car.style.height = '100px';
+        }else {
+            car.style.height = '275px';
+        }
+    }
 
 }]);
 /**

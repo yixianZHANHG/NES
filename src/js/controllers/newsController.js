@@ -42,8 +42,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
             HttpFactory.getData(url).then(function (result) {
                 // console.log(result)
                 $scope.items = $scope.items.concat(result.tid);
-                console.log($scope.items);
-                console.log(result.tid);
+                // console.log($scope.items);
+                // console.log(result.tid);
                 // console.log( $scope.items);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             });
@@ -74,8 +74,9 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     };
     $scope.doSome = function (index) {
         var zyx = $scope.items[index].docid;
-        console.log(zyx);
+        console.log($scope.items[index]);
         $state.go('newCon',{data:zyx});
-        $ionicViewSwitcher.nextDirection('forward');
+        // $ionicViewSwitcher.nextDirection('forward');
+
     }
 }]);

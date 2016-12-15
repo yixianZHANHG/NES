@@ -28,15 +28,15 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
                 };
                 img_title_Array.push(obj);
             }
-            // console.log(img_title_Array);
             $scope.news.adsArray1 = img_title_Array;
         }
 
         $scope.imas = result.future;
         $scope.itema = result.sublives;
+        // console.log(result.sublives);
         $scope.imad = result.live_review;
-        $scope.imada = result.live_review[0].sourceinfo;
-        // $scope.news.adsArray1 = result.ads;
+        console.log($scope.imad);
+
     });
 
 

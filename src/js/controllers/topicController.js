@@ -11,42 +11,56 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
             }
         }
     });
-}]).controller('topicController',['$scope','$ionicLoading','HttpFactory',function ($scope,$ionicLoading,HttpFactory) {
+}]).controller('topicController',['$scope','$ionicLoading','$state','$ionicViewSwitcher','HttpFactory',function ($scope,$ionicLoading,$state,$ionicViewSwitcher,HttpFactory) {
+
+    // 标题
+    var urla = 'http://c.m.163.com/newstopic/list/classification.html';
+    $scope.item= '';
+    HttpFactory.getData(urla).then(function (result) {
+        console.log(result);
+        $scope.item =result.data;
+    });
     // 预告
     var index =0;
-    var url ='http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-'+index+'.html';
-
-        // 上拉加载
     $scope.items = [];
+        // 上拉加载
     $scope.loadMore = function() {
-        // $scope.isShowInfinite = true;
-      if(index<=20){
 
-          index +=10;
-          var url = 'http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-'+index+'.html';
+            var url = 'http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/'+index+'-10.html';
           HttpFactory.getData(url).then(function (result) {
-
-              console.log(result.data);
-              //一共就20个  没了  不用concat 恩
-              $scope.items = result.data.expertList;
+              index +=10;
+              $scope.items =$scope.items.concat(result.data.expertList);
               $scope.$broadcast('scroll.infiniteScrollComplete');
           });
-      }else {
-         index=0;
-          console.log("到底啦!!");
-      }
 
     };
 
     // 下拉刷新
     $scope.doRefresh = function () {
-        $scope.isShowInfinite = true;
+        var url = 'http://c.m.163.com/newstopic/list/expert/5YyX5Lqs/0-10.html';
         HttpFactory.getData(url).then(function (result) {
-            $scope.items = result.data.expertList;
+            $scope.items =$scope.items.concat(result.data.expertList);
         }).finally(function() {
             $scope.$broadcast('scroll.refreshComplete');
         });
 
     };
+    // 详情页面跳转
+    $scope.doSome = function (index) {
+        var zyx = $scope.items[index].expertId;
+        $state.go('topicOne',{data:zyx});
+    }
+$scope.ddd =function () {
+    console.log("ddddddd")
+};
+$scope.changHight = function () {
+    var car = document.querySelector('.topicCard')
+    // console.log(car);
+    if(car.style.height == '70px'){
+        car.style.height = '100px';
+    }else {
+        car.style.height = '70px';
+    }
+}
 
 }]);
