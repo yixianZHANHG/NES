@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a09b24d0-4ac2-4350-9531-1c8fdd25ccf0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/topicOne.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/controllers/newsController1.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.css" afterPath="$PROJECT_DIR$/dist/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.min.css" afterPath="$PROJECT_DIR$/dist/css/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.js" afterPath="$PROJECT_DIR$/dist/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.min.js" afterPath="$PROJECT_DIR$/dist/js/all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/live.html" afterPath="$PROJECT_DIR$/dist/live.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news.html" afterPath="$PROJECT_DIR$/dist/news.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/topic.html" afterPath="$PROJECT_DIR$/dist/topic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/topicOne.html" afterPath="$PROJECT_DIR$/dist/topicOne.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/style.css" afterPath="$PROJECT_DIR$/src/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/liveController.js" afterPath="$PROJECT_DIR$/src/js/controllers/liveController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/newsController.js" afterPath="$PROJECT_DIR$/src/js/controllers/newsController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/topicController.js" afterPath="$PROJECT_DIR$/src/js/controllers/topicController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/live.html" afterPath="$PROJECT_DIR$/src/live.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/newCon.html" afterPath="$PROJECT_DIR$/src/newCon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/news.html" afterPath="$PROJECT_DIR$/src/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/newsDetail.html" afterPath="$PROJECT_DIR$/src/newsDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tabs.html" afterPath="$PROJECT_DIR$/src/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" afterPath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/topic.html" afterPath="$PROJECT_DIR$/src/topic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/topicOne.html" afterPath="$PROJECT_DIR$/src/topicOne.html" />
     </list>
     <ignored path="NES.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,35 +36,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="topicController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/topicController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topicOneController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#50#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topic.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="topic.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/topic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="13" column="34" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="34" />
+            <state relative-caret-position="45">
+              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
               </folding>
@@ -85,9 +52,34 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="305" column="13" selection-start-line="305" selection-start-column="13" selection-end-line="305" selection-end-column="13" />
+            <state relative-caret-position="324">
+              <caret line="306" column="23" selection-start-line="306" selection-start-column="23" selection-end-line="306" selection-end-column="23" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topicOne.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/topicOne.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topicOneController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="901">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#50#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,15 +115,15 @@
         <option value="$PROJECT_DIR$/src/js/controllers/newsController.js" />
         <option value="$PROJECT_DIR$/src/js/controllers/newConController.js" />
         <option value="$PROJECT_DIR$/src/newCon.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
         <option value="$PROJECT_DIR$/src/js/controllers/liveController.js" />
         <option value="$PROJECT_DIR$/src/live.html" />
         <option value="$PROJECT_DIR$/src/news.html" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/topicOne.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/topicController.js" />
         <option value="$PROJECT_DIR$/src/topic.html" />
         <option value="$PROJECT_DIR$/src/css/style.css" />
-        <option value="$PROJECT_DIR$/src/js/controllers/topicController.js" />
+        <option value="$PROJECT_DIR$/src/topicOne.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
       </list>
     </option>
   </component>
@@ -370,12 +362,12 @@
       <workItem from="1481629101477" duration="16000" />
       <workItem from="1481686318020" duration="2001000" />
       <workItem from="1481703148483" duration="72000" />
-      <workItem from="1481704093561" duration="47411000" />
+      <workItem from="1481704093561" duration="52324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140921000" />
+    <option name="totallyTimeSpent" value="145834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,14 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/topicOne.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/newConController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -737,48 +721,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/topicOne.html">
+    <entry file="file://$PROJECT_DIR$/dist/topicOne.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="305" column="13" selection-start-line="305" selection-start-column="13" selection-end-line="305" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/topicController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+        <state relative-caret-position="235">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/topic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="45">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="306" column="23" selection-start-line="306" selection-start-column="23" selection-end-line="306" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/topicOne.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>

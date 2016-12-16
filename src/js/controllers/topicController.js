@@ -54,12 +54,12 @@ $scope.ddd =function () {
     console.log("ddddddd")
 };
 $scope.changHight = function () {
-    var car = document.querySelector('.topicCard')
+    var car = document.querySelector('.topicCarda')
     // console.log(car);
-    if(car.style.height == '70px'){
-        car.style.height = '100px';
+    if(car.style.height == '67px'){
+        car.style.height = '210px';
     }else {
-        car.style.height = '70px';
+        car.style.height = '67px';
     }
 }
 

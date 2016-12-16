@@ -16,13 +16,22 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
      var ull = $stateParams.data;
      var url = "http://c.m.163.com/newstopic/qa/"+ull+".html";
     var items = [];
-    var imada = [];
+    var itemsa = [];
   HttpFactory.getData(url).then(function (result) {
       $scope.item = result.data;
       $scope.items =  $scope.item.expert;
-      // console.log($scope.item.expert);
-      $scope.imada = $scope.items.relatedNews;
-      console.log($scope.items.relatedNews);
+      console.log($scope.item.expert);
+
+      var ABC = document.querySelector(".ABC");
+      console.log(ABC);
+      if($scope.items.relatedNews){
+          console.log("ddddddddddd")
+          $scope.imada = $scope.items.relatedNews;
+          $scope.sy = true;
+      }else {
+          $scope.sy =false;
+
+      }
 
   });
     $scope.changHight = function () {

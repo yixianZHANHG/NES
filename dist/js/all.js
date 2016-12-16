@@ -375,12 +375,12 @@ $scope.ddd =function () {
     console.log("ddddddd")
 };
 $scope.changHight = function () {
-    var car = document.querySelector('.topicCard')
+    var car = document.querySelector('.topicCarda')
     // console.log(car);
-    if(car.style.height == '70px'){
-        car.style.height = '100px';
+    if(car.style.height == '67px'){
+        car.style.height = '210px';
     }else {
-        car.style.height = '70px';
+        car.style.height = '67px';
     }
 }
 
@@ -403,13 +403,22 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
      var ull = $stateParams.data;
      var url = "http://c.m.163.com/newstopic/qa/"+ull+".html";
     var items = [];
-    var imada = [];
+    var itemsa = [];
   HttpFactory.getData(url).then(function (result) {
       $scope.item = result.data;
       $scope.items =  $scope.item.expert;
-      // console.log($scope.item.expert);
-      $scope.imada = $scope.items.relatedNews;
-      console.log($scope.items.relatedNews);
+      console.log($scope.item.expert);
+
+      var ABC = document.querySelector(".ABC");
+      console.log(ABC);
+      if($scope.items.relatedNews){
+          console.log("ddddddddddd")
+          $scope.imada = $scope.items.relatedNews;
+          $scope.sy = true;
+      }else {
+          $scope.sy =false;
+
+      }
 
   });
     $scope.changHight = function () {

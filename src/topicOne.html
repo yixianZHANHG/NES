@@ -27,18 +27,20 @@
                             </p>
                         </div>
                         </div>
-                       <div class="button button-clear button-small button-positive" ng-click="changHight()">
-                           <i class="ion-ios-arrow-up"></i>
-                       </div>
+                        <div class="button button-clear button-small button-positive" ng-click="changHight()" style="z-index: 9999">
+                            <i class="ion-ios-arrow-up"></i>
+                        </div>
                     </div>
+
                 </div>
-              <div>
+              <div class="ABC" ng-if="sy">
                   <div class="topicCard">
                       <div class="card ">
                           <span style="padding-left: 10px">相关新闻</span>
                       </div>
                   </div>
                   <div class="card">
+
                       <ion-list ng-repeat="em in imada">
                           <ion-item class="Cardion" ng-click="">
                               <p>{{em.title}}</p>

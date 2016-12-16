@@ -302,14 +302,16 @@ a{
     /*display: flex;*/
 
 /*}*/
-.topicCard{
-    height: 70px;
+.topicCardaA{
+    margin-bottom: 0;
+    text-align: center;
 }
-/*.topicTitleDiv{*/
-    /*width: 100px;*/
-    /*height: 70px;*/
-    /*background-color: #0a9dc7;*/
-/*}*/
+.topicCarda{
+    height: 67px;
+    transition: all 2s;
+    overflow: hidden;
+}
+
 .card .TopickImg{
     height: 3rem;
     width: 3rem;
@@ -334,11 +336,6 @@ a{
 .topicContent .card{
     margin: 10px 10px;
 }
-/*.TOPICdiv{*/
-    /*!*background-color: #9e9e9e;*!*/
-    /*height: 20rem;*/
-    /*width: 100%;*/
-/*}*/
 .TOPICdiv img{
     width: 100%;
     height: 100%;

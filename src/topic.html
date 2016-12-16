@@ -11,16 +11,16 @@
                 on-refresh="doRefresh()">
         </ion-refresher>
 
-        <div class="card topicCard" style="text-align: center">
-            <div class="row row-wrap"  >
+        <div class="card topicCardaA">
+            <div class="row row-wrap topicCarda"  >
                 <div class="col  col-20" ng-repeat="its in item">
-                    <div class="button"style="line-height:20px;background-color: white;border: 0px;" ng-click="ddd()">
+                    <div class="button" style="line-height:20px;background-color: white;border: 0px;" ng-click="ddd()">
                         <img ng-src="{{its.icon}}" style="width: 100%">
                         {{its.name}}
                     </div>
                 </div>
             </div>
-            <div class="button button-clear button-small button-positive" ng-click="changHight()">
+            <div class="button button-clear button-positive" ng-click="changHight()" >
                 <i class="ion-ios-arrow-up"></i>
             </div>
         </div>
