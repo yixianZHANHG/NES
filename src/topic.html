@@ -1,5 +1,5 @@
 <!--加盟店-->
-<ion-view view-title="话题">
+<ion-view>
 <ion-nav-bar class="bar-assertive" title="话题">
     <ion-nav-back-button></ion-nav-back-button>
 </ion-nav-bar>
@@ -27,8 +27,8 @@
 
 
        <ion-list>
-               <div class="card" ng-repeat="item in items" >
-                   <div  ng-click="doSome($index)">
+               <div class="card" ng-repeat="item in items"   ng-click="doSome($index)">
+                   <div>
                        <span class="TopickImg"><img ng-src="{{item.headpicurl}}"></span>
                        <span>{{item.name}}/{{item.title}}</span>
                    </div>

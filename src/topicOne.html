@@ -1,9 +1,9 @@
 
 
 <ion-view view-title="topicOne">
-    <!--<ion-header-bar class="bar-assertive">-->
-        <!--<a class="button button-clear icon ion-chevron-left" href="#/tabs/news" nav-direction="back"></a>-->
-    <!--</ion-header-bar>-->
+    <ion-header-bar class="bar-assertive">
+        <a class="button button-clear icon ion-chevron-left" href="#/tabs/topic" nav-direction="back"></a>
+    </ion-header-bar>
     <ion-content class="topicContent">
 
                 <div class="TOPICdiv">
@@ -13,7 +13,7 @@
                             {{items.alias}}
                         </div>
                     </div>
-                    <div class="card topickKarB" >
+                    <div class="card topickKarB"  >
                         <div class="topickKard">
                             <div class="topickKarda">
                                 <div class="topickKardc">
@@ -49,11 +49,20 @@
                   </div>
               </div>
                 <div class="topicCard">
-                    <div class="card ">
-                       <div>
-                           <span> 760提问.1回复</span>
-
+                    <div class="card " style="background-color: #0a9dc7">
+                       <div style="float: left;">
+                           <span> {{items.questionCount}}提问</span>
+                           <span>{{items.expertState}}回复</span>
                        </div>
+                        <div style="float: right;">
+                            <div style="width: 80px;height: 30px;background-color: #6b46e5">
+                                <!--<ion-radio style="width: 50%;display: inline-block;text-align: center">最新</ion-radio>-->
+                                <!--<ion-radio style="width: 50%;display: inline-block">最热</ion-radio>-->
+                                <ion-checkbox ng-model="filter.blue">Red</ion-checkbox>
+
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>

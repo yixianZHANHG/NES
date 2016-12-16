@@ -50,9 +50,6 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
         var zyx = $scope.items[index].expertId;
         $state.go('topicOne',{data:zyx});
     }
-$scope.ddd =function () {
-    console.log("ddddddd")
-};
 $scope.changHight = function () {
     var car = document.querySelector('.topicCarda')
     // console.log(car);

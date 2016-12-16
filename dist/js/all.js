@@ -51,9 +51,8 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
 
         $scope.imas = result.future;
         $scope.itema = result.sublives;
-        // console.log(result.sublives);
+
         $scope.imad = result.live_review;
-        console.log($scope.imad);
 
     });
 
@@ -161,8 +160,8 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
             HttpFactory.getData(url).then(function (result) {
                 // console.log(result)
                 $scope.items = $scope.items.concat(result.tid);
-                // console.log($scope.items);
-                // console.log(result.tid);
+                console.log($scope.items);
+                console.log(result.tid);
                 // console.log( $scope.items);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             });
@@ -193,10 +192,9 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     };
     $scope.doSome = function (index) {
         var zyx = $scope.items[index].docid;
-        console.log($scope.items[index]);
+        console.log(zyx);
         $state.go('newCon',{data:zyx});
-        // $ionicViewSwitcher.nextDirection('forward');
-
+        $ionicViewSwitcher.nextDirection('forward');
     }
 }]);
 /**
@@ -371,9 +369,6 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
         var zyx = $scope.items[index].expertId;
         $state.go('topicOne',{data:zyx});
     }
-$scope.ddd =function () {
-    console.log("ddddddd")
-};
 $scope.changHight = function () {
     var car = document.querySelector('.topicCarda')
     // console.log(car);
@@ -409,12 +404,15 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
       $scope.items =  $scope.item.expert;
       console.log($scope.item.expert);
 
-      var ABC = document.querySelector(".ABC");
-      console.log(ABC);
+
+
+
+
+
+
       if($scope.items.relatedNews){
-          console.log("ddddddddddd")
           $scope.imada = $scope.items.relatedNews;
-          $scope.sy = true;
+          $scope.sy=true;
       }else {
           $scope.sy =false;
 

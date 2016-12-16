@@ -33,9 +33,8 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
 
         $scope.imas = result.future;
         $scope.itema = result.sublives;
-        // console.log(result.sublives);
+
         $scope.imad = result.live_review;
-        console.log($scope.imad);
 
     });
 

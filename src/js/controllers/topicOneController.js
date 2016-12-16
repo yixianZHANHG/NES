@@ -22,12 +22,15 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
       $scope.items =  $scope.item.expert;
       console.log($scope.item.expert);
 
-      var ABC = document.querySelector(".ABC");
-      console.log(ABC);
+
+
+
+
+
+
       if($scope.items.relatedNews){
-          console.log("ddddddddddd")
           $scope.imada = $scope.items.relatedNews;
-          $scope.sy = true;
+          $scope.sy=true;
       }else {
           $scope.sy =false;
 
