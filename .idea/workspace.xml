@@ -4,16 +4,7 @@
     <list default="true" id="a09b24d0-4ac2-4350-9531-1c8fdd25ccf0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.css" afterPath="$PROJECT_DIR$/dist/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.min.css" afterPath="$PROJECT_DIR$/dist/css/main.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.js" afterPath="$PROJECT_DIR$/dist/js/all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.min.js" afterPath="$PROJECT_DIR$/dist/js/all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/topic.html" afterPath="$PROJECT_DIR$/dist/topic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/topicOne.html" afterPath="$PROJECT_DIR$/dist/topicOne.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/style.css" afterPath="$PROJECT_DIR$/src/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/topicController.js" afterPath="$PROJECT_DIR$/src/js/controllers/topicController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" afterPath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/topic.html" afterPath="$PROJECT_DIR$/src/topic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/topicOne.html" afterPath="$PROJECT_DIR$/src/topicOne.html" />
     </list>
     <ignored path="NES.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="306" column="23" selection-start-line="306" selection-start-column="23" selection-end-line="306" selection-end-column="23" />
+            <state relative-caret-position="405">
+              <caret line="322" column="14" selection-start-line="322" selection-start-column="14" selection-end-line="322" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -72,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topicOneController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="topicOneController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="901">
@@ -121,9 +112,9 @@
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/src/js/controllers/topicController.js" />
         <option value="$PROJECT_DIR$/src/topic.html" />
-        <option value="$PROJECT_DIR$/src/css/style.css" />
         <option value="$PROJECT_DIR$/src/topicOne.html" />
         <option value="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
+        <option value="$PROJECT_DIR$/src/css/style.css" />
       </list>
     </option>
   </component>
@@ -277,6 +268,8 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -362,12 +355,12 @@
       <workItem from="1481629101477" duration="16000" />
       <workItem from="1481686318020" duration="2001000" />
       <workItem from="1481703148483" duration="72000" />
-      <workItem from="1481704093561" duration="52324000" />
+      <workItem from="1481704093561" duration="54657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145834000" />
+    <option name="totallyTimeSpent" value="148167000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -748,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="306" column="23" selection-start-line="306" selection-start-column="23" selection-end-line="306" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/topicOne.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -774,6 +759,14 @@
           <folding>
             <element signature="e#0#50#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="322" column="14" selection-start-line="322" selection-start-column="14" selection-end-line="322" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
