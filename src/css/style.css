@@ -118,6 +118,16 @@ html{
     display: inline-block;
     /*margin-top: 20px;*/
 }
+
+/*新闻页面*/
+.iTems-div{
+    display: flex;
+}
+
+
+
+
+
 /*我的消息颜色*/
 .ion-android-notifications-none:before{
     color: red;
