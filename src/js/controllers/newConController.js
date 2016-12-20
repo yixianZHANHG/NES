@@ -14,11 +14,13 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
        body:''
    };
    var docid = $stateParams.data;
-    console.log(docid);
+    // console.log($stateParams.data);
+
     var url = 'http://c.m.163.com/nc/article/'+ docid +'/full.html';
+    // console.log(url);
     HttpFactory.getData(url).then(function (result) {
         $scope.newCon.detail  = result[docid];
-        console.log($scope.newCon.detail);
+        // console.log($scope.newCon.detail);
 
         var newsObj = $scope.newCon.detail;
         if (newsObj.img && newsObj.img.length){
@@ -30,7 +32,7 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
                 var imgStyle = 'width:' + imgWidth + 'px';
                 var imgStr = "<img" + " style='" + imgStyle + "'" + " src=" + newsObj.img[i].src + ">";
                 newsObj.body = newsObj.body.replace(newsObj.img[i].ref,imgStr);
-                console.log(newsObj.body);
+                // console.log(newsObj.body);
             }
         };
 

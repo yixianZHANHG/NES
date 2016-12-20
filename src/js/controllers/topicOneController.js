@@ -20,7 +20,7 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
   HttpFactory.getData(url).then(function (result) {
       $scope.item = result.data;
       $scope.items =  $scope.item.expert;
-      console.log($scope.item.expert);
+      // console.log($scope.item.expert);
 
 
 

@@ -93,11 +93,13 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
        body:''
    };
    var docid = $stateParams.data;
-    console.log(docid);
+    // console.log($stateParams.data);
+
     var url = 'http://c.m.163.com/nc/article/'+ docid +'/full.html';
+    // console.log(url);
     HttpFactory.getData(url).then(function (result) {
         $scope.newCon.detail  = result[docid];
-        console.log($scope.newCon.detail);
+        // console.log($scope.newCon.detail);
 
         var newsObj = $scope.newCon.detail;
         if (newsObj.img && newsObj.img.length){
@@ -109,7 +111,7 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
                 var imgStyle = 'width:' + imgWidth + 'px';
                 var imgStr = "<img" + " style='" + imgStyle + "'" + " src=" + newsObj.img[i].src + ">";
                 newsObj.body = newsObj.body.replace(newsObj.img[i].ref,imgStr);
-                console.log(newsObj.body);
+                // console.log(newsObj.body);
             }
         };
 
@@ -145,39 +147,44 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
 
     var index = 10;
     var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size="+index+"&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
+
+
     HttpFactory.getData(url).then(function (result) {
+        // console.log(index);
         $scope.news.newsArray = result;
         $scope.news.adsArray = result.T1348647909107[0].ads;
-        // console.log(result.T1348647909107[0].ads);
     });
 //上拉加载
+
+
         $scope.items = [];
         $scope.loadMore = function () {
+            index += 10;
+            // var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset="+index+"&size=10&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
             HttpFactory.getData(url).then(function (result) {
                 $scope.name = result.T1348647909107.splice(0,1);
-                $scope.items = result.T1348647909107;
-                console.log( result.T1348647909107 );
+
+                $scope.items = result.T1348647909107.concat($scope.items);
+                console.log(index);
+                $scope.$broadcast('scroll.infiniteScrollComplete');
 
             });
-        }
-
-
-
-
-
-
-
-
-
-
-
+        };
 
     $scope.doSome = function (index) {
-        var zyx = $scope.items[index].docid;
+        var zyx = $scope.items[index].id;
         console.log(zyx);
+        if(zyx = C8JJR2PV000189FH){
+            $state.go('newsDetail',{data:zyx});
+        }else {
+
+        }
         $state.go('newCon',{data:zyx});
         $ionicViewSwitcher.nextDirection('forward');
+
     }
+
+
 }]);
 /**
  * Created by qingyun on 16/12/7.
@@ -384,7 +391,7 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
   HttpFactory.getData(url).then(function (result) {
       $scope.item = result.data;
       $scope.items =  $scope.item.expert;
-      console.log($scope.item.expert);
+      // console.log($scope.item.expert);
 
 
 

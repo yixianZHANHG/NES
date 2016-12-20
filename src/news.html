@@ -16,23 +16,24 @@
             </ion-scroll>
         </div>
 <ion-content>
+
     <!--轮播图-->
     <mg-slide-box source-array="news.adsArray"></mg-slide-box>
-    <!--新闻列表-->
-    <!--上拉加载-->
-    <!--<ion-infinite-scroll-->
-            <!--on-infinite="loadMore('上拉')"-->
-            <!--distance="1%"-->
-            <!--spinner="android"-->
-            <!--immediate-check="true"-->
-            <!--ng-if="isShowInfinite">-->
-    <!--</ion-infinite-scroll>-->
-    <div ng-click="loadMore()">ssssssssss</div>
     <ion-list>
-        <ion-item ng-repeat="ite in items" class="iTems-div item-text-wrap" >
+
+        <ion-item ng-repeat="ite in items " class="iTems-div item-text-wrap" ng-click="doSome($index)">
                   <img ng-src="{{ite.imgsrc}}" style="width: 20%;height: 100%">
                   <span>{{ite.title}}</span>
         </ion-item>
     </ion-list>
+
+
+            <!--上拉加载-->
+            <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    distance="1%"
+                    spinner="android"
+                    icon="ion-loading-c">
+            </ion-infinite-scroll>
 </ion-content>
 </ion-view>
