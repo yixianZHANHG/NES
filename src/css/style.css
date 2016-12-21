@@ -325,17 +325,12 @@ a{
 .card .TopickImg{
     height: 3rem;
     width: 3rem;
-    /*position: absolute;*/
-    /*margin-top: 20px;*/
 }
 .card .TopickImg img{
     width: 15%;
     height: 15%;
     border-radius: 50%;
     /*position: absolute;*/
-}
-.TopickImga{
-    /*margin-top: 20px;*/
 }
 .TopickImga img{
     width: 100%;

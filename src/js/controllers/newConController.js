@@ -14,8 +14,7 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
        body:''
    };
    var docid = $stateParams.data;
-    // console.log($stateParams.data);
-
+    console.log($stateParams.data);
     var url = 'http://c.m.163.com/nc/article/'+ docid +'/full.html';
     // console.log(url);
     HttpFactory.getData(url).then(function (result) {

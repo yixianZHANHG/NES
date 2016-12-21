@@ -93,8 +93,7 @@ angular.module('myApp.newCon',[]).config(['$stateProvider',function ($stateProvi
        body:''
    };
    var docid = $stateParams.data;
-    // console.log($stateParams.data);
-
+    console.log($stateParams.data);
     var url = 'http://c.m.163.com/nc/article/'+ docid +'/full.html';
     // console.log(url);
     HttpFactory.getData(url).then(function (result) {
@@ -133,39 +132,39 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
     });
 }]).controller('newsController',['$scope','$ionicPopup','$state','$ionicViewSwitcher',"$ionicLoading","$ionicScrollDelegate",'HttpFactory',function ($scope,$ionicPopup,$state,$ionicViewSwitcher,$ionicLoading,$ionicScrollDelegate,HttpFactory) {
     // 导航
-    var url = "http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html";
-    HttpFactory.getData(url).then(function (result) {
+    var urlb = "http://c.m.163.com/nc/topicset/ios/subscribe/manage/listspecial.html";
+    HttpFactory.getData(urlb).then(function (result) {
         $scope.numArry = result.tList;
-        // console.log(result);
-    })
-
-    // 轮播图
+        console.log(result);
+    });
+    $scope.ddSome = function (index) {
+        var yxa = $scope.numArry[index].tid;
+        var url = "http://c.m.163.com/dlist/article/dynamic?from="+yxa+"&offset=0&size=10&fn=2&passport=&devId=%2F3MuOc2%2Ftpr3BFTbGpkB3EkbdABijhZKb0YUM%2BIpk4QLD6gVVgPcP%2BV791ye9IA%2FIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=&lon=&version=17.2";
+        HttpFactory.getData(url).then(function (result) {
+            $scope.items = result[yxa];
+            console.log($scope.items);
+        });
+    };
+    // // 轮播图
     $scope.news = {
         newsArray:'',
         adsArray:[]
     };
-
-    var index = 10;
-    var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size="+index+"&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
-
-
+    var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size=10&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
     HttpFactory.getData(url).then(function (result) {
-        // console.log(index);
         $scope.news.newsArray = result;
         $scope.news.adsArray = result.T1348647909107[0].ads;
     });
 //上拉加载
-
-
         $scope.items = [];
+         var index = 10;
         $scope.loadMore = function () {
+            var urla = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset=0&size="+index+"&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
             index += 10;
-            // var url = "http://c.m.163.com/recommend/getSubDocPic?tid=T1348647909107&from=toutiao&offset="+index+"&size=10&fn=1&prog=LMA1&passport=&devId=eW7qcXmjWleAjCxp25EgTBBywawDoVwZiZ9SMikG4cGiOa69wsn%2FdeHaaNGRMr2hIIGNeE0nI41SFrBIaL1THA%3D%3D&lat=DJEPdRawaRYCJZwF3SQobA%3D%3D&lon=7J7OmyytD8SqP0pSV1cJJA%3D%3D";
-            HttpFactory.getData(url).then(function (result) {
+            // console.log(urla);
+            HttpFactory.getData(urla).then(function (result) {
                 $scope.name = result.T1348647909107.splice(0,1);
-
                 $scope.items = result.T1348647909107.concat($scope.items);
-                console.log(index);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
 
             });
@@ -173,16 +172,10 @@ angular.module('myApp.news',[]).config(['$stateProvider',function ($stateProvide
 
     $scope.doSome = function (index) {
         var zyx = $scope.items[index].id;
-        console.log(zyx);
-        if(zyx = C8JJR2PV000189FH){
-            $state.go('newsDetail',{data:zyx});
-        }else {
-
-        }
         $state.go('newCon',{data:zyx});
         $ionicViewSwitcher.nextDirection('forward');
 
-    }
+    };
 
 
 }]);
@@ -360,7 +353,6 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
     }
 $scope.changHight = function () {
     var car = document.querySelector('.topicCarda')
-    // console.log(car);
     if(car.style.height == '67px'){
         car.style.height = '210px';
     }else {

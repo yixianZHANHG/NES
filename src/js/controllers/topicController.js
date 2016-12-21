@@ -52,7 +52,6 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
     }
 $scope.changHight = function () {
     var car = document.querySelector('.topicCarda')
-    // console.log(car);
     if(car.style.height == '67px'){
         car.style.height = '210px';
     }else {
