@@ -10,8 +10,10 @@
                         direction="x"
                         min-zoom="0.5"
                         max-zoom="1">
-                <div class="classBar">
-                    <a ng-repeat="num in numArry"  style="white-space:nowrap" class="button1" ng-click="ddSome($index)">{{num.tname}}</a>
+                <div class="classBar" style="background-color: #d1d1d1">
+                    <button ng-repeat="num in numArry"  style="white-space:nowrap" class="button1" ng-click="ddSome($index)">
+                        {{num.tname}}
+                    </button>
                 </div>
             </ion-scroll>
         </div>

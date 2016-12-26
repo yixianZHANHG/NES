@@ -39,7 +39,6 @@ angular.module('cftApp.news2',[]).controller('newsController2',['$scope','$ionic
             }
             if (!$scope.news.adsArray2.length){
                 if(result[0].ads){
-                    //由于网易新闻有时候除了第一次之外没有头条用个数组存着
                     $scope.news.adsArray2 = result[0].ads;
                 }
             }

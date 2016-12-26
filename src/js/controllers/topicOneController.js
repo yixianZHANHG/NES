@@ -40,10 +40,10 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
     $scope.changHight = function () {
         var car = document.querySelector('.topickKard')
         // console.log(car);
-        if(car.style.height == '275px'){
+        if(car.style.height == '200px'){
             car.style.height = '100px';
         }else {
-            car.style.height = '275px';
+            car.style.height = '200px';
         }
     }
 

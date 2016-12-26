@@ -11,24 +11,24 @@ angular.module('myApp.personal',['ionic-datepicker']).config(['$stateProvider','
             }
         }
     });
-    var datePickerObj = {
-        inputDate: new Date(),
-        titleLabel: 'Select a Date',
-        setLabel: 'Set',
-        todayLabel: 'Today',
-        closeLabel: 'Close',
-        mondayFirst: false,
-        weeksList: ["S", "M", "T", "W", "T", "F", "S"],
-        monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
-        templateType: 'popup',
-        from: new Date(2012, 8, 1),
-        to: new Date(2018, 8, 1),
-        showTodayButton: true,
-        dateFormat: 'dd MMMM yyyy',
-        closeOnSelect: false,
-        disableWeekdays: []
-    };
-    ionicDatePickerProvider.configDatePicker(datePickerObj);
+    // var datePickerObj = {
+    //     inputDate: new Date(),
+    //     titleLabel: 'Select a Date',
+    //     setLabel: 'Set',
+    //     todayLabel: 'Today',
+    //     closeLabel: 'Close',
+    //     mondayFirst: false,
+    //     weeksList: ["S", "M", "T", "W", "T", "F", "S"],
+    //     monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+    //     templateType: 'popup',
+    //     from: new Date(2012, 8, 1),
+    //     to: new Date(2018, 8, 1),
+    //     showTodayButton: true,
+    //     dateFormat: 'dd MMMM yyyy',
+    //     closeOnSelect: false,
+    //     disableWeekdays: []
+    // };
+    // ionicDatePickerProvider.configDatePicker(datePickerObj);
 }]).controller('personalController',['$scope','ionicDatePicker','$ionicBackdrop','$timeout',function ($scope,ionicDatePicker,$ionicBackdrop, $timeout) {
     var ipObj1 = {
         callback: function (val) {  //Mandatory

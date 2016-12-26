@@ -49,13 +49,13 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
     $scope.doSome = function (index) {
         var zyx = $scope.items[index].expertId;
         $state.go('topicOne',{data:zyx});
-    }
+    };
 $scope.changHight = function () {
     var car = document.querySelector('.topicCarda')
-    if(car.style.height == '67px'){
-        car.style.height = '210px';
-    }else {
+    if(car.style.height == '210px'){
         car.style.height = '67px';
+    }else {
+        car.style.height = '210px';
     }
 }
 

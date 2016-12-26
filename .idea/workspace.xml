@@ -2,16 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a09b24d0-4ac2-4350-9531-1c8fdd25ccf0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/liveOneController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/liveOne.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.css" afterPath="$PROJECT_DIR$/dist/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.min.css" afterPath="$PROJECT_DIR$/dist/css/main.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.js" afterPath="$PROJECT_DIR$/dist/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.min.js" afterPath="$PROJECT_DIR$/dist/js/all.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/live.html" afterPath="$PROJECT_DIR$/dist/live.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news.html" afterPath="$PROJECT_DIR$/dist/news.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/tabs.html" afterPath="$PROJECT_DIR$/dist/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/topic.html" afterPath="$PROJECT_DIR$/dist/topic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/topicOne.html" afterPath="$PROJECT_DIR$/dist/topicOne.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/style.css" afterPath="$PROJECT_DIR$/src/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/newConController.js" afterPath="$PROJECT_DIR$/src/js/controllers/newConController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/newsController.js" afterPath="$PROJECT_DIR$/src/js/controllers/newsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/liveController.js" afterPath="$PROJECT_DIR$/src/js/controllers/liveController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/newsController2.js" afterPath="$PROJECT_DIR$/src/js/controllers/newsController2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personalController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personalController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/tabsController.js" afterPath="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/topicController.js" afterPath="$PROJECT_DIR$/src/js/controllers/topicController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" afterPath="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/live.html" afterPath="$PROJECT_DIR$/src/live.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/news.html" afterPath="$PROJECT_DIR$/src/news.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tabs.html" afterPath="$PROJECT_DIR$/src/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/topic.html" afterPath="$PROJECT_DIR$/src/topic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/topicOne.html" afterPath="$PROJECT_DIR$/src/topicOne.html" />
     </list>
     <ignored path="NES.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,51 +52,78 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="320" column="7" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
+            <state relative-caret-position="17532">
+              <caret line="487" column="3" selection-start-line="485" selection-start-column="2" selection-end-line="487" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/news.html">
+      <file leaf-file-name="live.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/live.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="1980">
+              <caret line="55" column="16" selection-start-line="54" selection-start-column="4" selection-end-line="55" selection-end-column="16" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#ion-scroll#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#0;n#ion-slide-box#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#0;n#ion-slide-box#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#ion-slide#0;n#ion-slide-box#0;n#!!top" expanded="true" />
+                <element signature="n#ion-slide#1;n#ion-slide-box#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#ion-slide#1;n#ion-slide-box#0;n#!!top" expanded="true" />
+                <element signature="n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tabsController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/tabsController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newsController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/newsController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topicController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="topicController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/controllers/topicController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
+            <state relative-caret-position="1980">
+              <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topicOneController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/myController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personalController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/personalController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1512">
+              <caret line="42" column="0" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dist/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="0" column="614" selection-start-line="0" selection-start-column="614" selection-end-line="0" selection-end-column="614" />
               <folding />
             </state>
           </provider>
@@ -92,8 +134,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -105,28 +147,32 @@
       <list>
         <option value="$PROJECT_DIR$/src/js/services/httpFactory.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personalController.js" />
         <option value="$PROJECT_DIR$/src/lib/TOpic.html" />
         <option value="$PROJECT_DIR$/src/TOpic.html" />
         <option value="$PROJECT_DIR$/src/js/controllers/toPicConcontroller.js" />
         <option value="$PROJECT_DIR$/src/toPicCon.html" />
-        <option value="$PROJECT_DIR$/src/js/app.js" />
-        <option value="$PROJECT_DIR$/src/tabs.html" />
         <option value="$PROJECT_DIR$/src/newsDetail.html" />
         <option value="$PROJECT_DIR$/src/personal.html" />
-        <option value="$PROJECT_DIR$/src/live.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/liveController.js" />
-        <option value="$PROJECT_DIR$/src/newCon.html" />
-        <option value="$PROJECT_DIR$/src/topicOne.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
         <option value="$PROJECT_DIR$/src/js/controllers/newConController.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/topic.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/topicController.js" />
-        <option value="$PROJECT_DIR$/src/css/style.css" />
         <option value="$PROJECT_DIR$/src/news.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/newsController2.js" />
+        <option value="$PROJECT_DIR$/src/newCon.html" />
         <option value="$PROJECT_DIR$/src/js/controllers/newsController.js" />
+        <option value="$PROJECT_DIR$/src/js/app.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/liveOneController.js" />
+        <option value="$PROJECT_DIR$/src/topicOne.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/topicOneController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/topicController.js" />
+        <option value="$PROJECT_DIR$/src/liveOne.html" />
+        <option value="$PROJECT_DIR$/src/dddd.html" />
+        <option value="$PROJECT_DIR$/src/css/style.css" />
+        <option value="$PROJECT_DIR$/src/live.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/liveController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
+        <option value="$PROJECT_DIR$/src/tabs.html" />
+        <option value="$PROJECT_DIR$/src/topic.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personalController.js" />
       </list>
     </option>
   </component>
@@ -178,7 +224,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -261,20 +306,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/ES6" />
+    <property name="last_opened_file_path" value="D:/销售赢家" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -375,12 +417,17 @@
       <workItem from="1482232182882" duration="1267000" />
       <workItem from="1482234404073" duration="62000" />
       <workItem from="1482238307763" duration="544000" />
-      <workItem from="1482283081448" duration="5437000" />
+      <workItem from="1482283081448" duration="5517000" />
+      <workItem from="1482289999518" duration="616000" />
+      <workItem from="1482308369428" duration="7399000" />
+      <workItem from="1482317000962" duration="43000" />
+      <workItem from="1482377103852" duration="57498000" />
+      <workItem from="1482735462347" duration="612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186943000" />
+    <option name="totallyTimeSpent" value="253191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,33 +440,34 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14693446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14693446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13866967" sideWeight="0.5021142" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13866967" sideWeight="0.51272535" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13866967" sideWeight="0.49788582" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14092447" sideWeight="0.48727465" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21247357" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18520986" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13866967" sideWeight="0.51272535" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13641489" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.141542" sideWeight="0.48727465" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -438,27 +486,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10404">
-          <caret line="289" column="10" selection-start-line="289" selection-start-column="10" selection-end-line="289" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/live.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/personal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3492">
@@ -524,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/myController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -540,13 +560,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/TOpic.html" />
     <entry file="file://$PROJECT_DIR$/src/lib/TOpic.html" />
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/toPicConcontroller.js" />
     <entry file="file://$PROJECT_DIR$/src/toPicCon.html" />
     <entry file="file://$PROJECT_DIR$/dist/personal.html">
@@ -556,28 +569,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/my.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/newsController1.js" />
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/newCon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -585,38 +577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/newsController2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/personal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1099">
-          <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/topicOne.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/liveController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/live.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -648,34 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/topicOne.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/toPicCon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="4" column="200" selection-start-line="4" selection-start-column="200" selection-end-line="4" selection-end-column="200" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -686,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/newCon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/topic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -701,72 +633,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/newsController2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1017">
+          <caret line="27" column="258" selection-start-line="27" selection-start-column="258" selection-end-line="27" selection-end-column="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/newCon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="78" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/newConController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/topic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="0" column="589" selection-start-line="0" selection-start-column="589" selection-end-line="0" selection-end-column="589" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="320" column="7" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="252">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#ion-scroll#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1044">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/my.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/personal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2952">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/liveOne.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="4" column="211" selection-start-line="4" selection-start-column="211" selection-end-line="4" selection-end-column="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dddd.html" />
+    <entry file="file://$PROJECT_DIR$/src/topicOne.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="30" selection-start-line="11" selection-start-column="23" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/liveOneController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/liveController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/newsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="-1116">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/tabsController.js">
+    <entry file="file://$PROJECT_DIR$/src/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="17532">
+          <caret line="487" column="3" selection-start-line="485" selection-start-column="2" selection-end-line="487" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/topicController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
+        <state relative-caret-position="1980">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/topicOneController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/myController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/live.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="55" column="16" selection-start-line="54" selection-start-column="4" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#0;n#ion-slide-box#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#0;n#ion-slide-box#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#ion-slide#0;n#ion-slide-box#0;n#!!top" expanded="true" />
+            <element signature="n#ion-slide#1;n#ion-slide-box#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#ion-slide#1;n#ion-slide-box#0;n#!!top" expanded="true" />
+            <element signature="n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#ion-slide#2;n#ion-slide-box#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/topic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/tabsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personalController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="42" column="0" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="0" column="614" selection-start-line="0" selection-start-column="614" selection-end-line="0" selection-end-column="614" />
           <folding />
         </state>
       </provider>

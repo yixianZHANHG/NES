@@ -1,16 +1,18 @@
 
 
 <ion-view view-title="topicOne">
-    <ion-header-bar class="bar-assertive">
-        <a class="button button-clear icon ion-chevron-left" href="#/tabs/topic" nav-direction="back"></a>
-    </ion-header-bar>
+    <div style="position: absolute;top: 2rem;left: 2rem;z-index: 9999">
+        <a href="#/tabs/topic" nav-direction="back"  style="color: white"><i class="ion-chevron-left"></i></a>
+    </div>
     <ion-content class="topicContent">
 
                 <div class="TOPICdiv">
                     <img ng-src="{{items.picurl}}">
                     <div class="TOPICdivC" >
                         <div class="TOPICdivCa">
-                            {{items.alias}}
+                            <p>{{items.alias}}</p>
+                            <p>ddd</p>
+                            <p>dddddd</p>
                         </div>
                     </div>
                     <div class="card topickKarB"  >

@@ -1,50 +1,87 @@
 <!--积分商城-->
-<ion-view id="aa">
-    <div class="bar bar-assertive">
-        <div>
-            <span class="button button-clear button-light">热门</span>
-            <span class="button button-clear button-light">分类</span>
-            <span class="button button-clear button-light">订阅</span>
-        </div>
+<!--->
+<ion-slide-box on-slide-changed="pop($index)"
 
-    </div>
-    <ion-content class="has-header">
-        <!--轮播图-->
-        <mg-slide-box source-array="news.adsArray1"></mg-slide-box>
+>
+    <ion-slide >
+        <ion-view>
+            <ion-content>
+                <!--轮播图-->
+                <mg-slide-box source-array="news.adsArray1"></mg-slide-box>
 
-        <div class="card LivePa">
-            <div class="item item-text-wrap">
-                <a ng-repeat="ima in imas">
-                    <p>{{ima.roomName}}</p>
-                </a>
-            </div>
-        </div>
+                <div class="card LivePa">
 
-        <ion-scroll class="card LiveP"
-                    direction="x"
-                    min-zoom="0.5"
-                    max-zoom="1">
-            <div class="classBar1">
-                <a ng-repeat="ima in itema">
-                   <img ng-src="{{ima.icon}}">
-                   <p>{{ima.tname}}</p>
-                </a>
-            </div>
-        </ion-scroll>
-        <ion-list class="DSAsa" >
-            <ion-item  style='background: url("{{ite.image}}");background-size: 100%;height: 150px' ng-repeat="ite in imad">
-                <!--<span ng-repeat="">{{ite.sourceinfo.tname}}</span>-->
-                <span class="DSAsacc">{{ite.roomName}}</span>
-                    <div class="DSAsaA" ng-if="ite.sourceinfo" >
-                        <img ng-src="{{ite.sourceinfo.timg}}">
-                        <span class="DSAsaAAA">
-                     {{ite.sourceinfo.tname}}
-                    </span>
+                    <div style="width: 20%;height: 100%;background-color: #4cd964;display: inline-block">
+                        <!--<div style="height: 100%;background-color: #4cd964;>dddd</div>-->
                     </div>
 
-            </ion-item>
 
+                    <div class="item item-text-wrap" style="display: inline-block">
+                        <marquee behavior=" alternate" direction="up" contenteditable="true" scrolldelay="-1" scrollamount="2" width="100%" hight="800px" onmouseover="this.stop();" onmouseout="this.start();" height="30px;">
+                            <a ng-repeat="ima in imas">
+                                <p> {{ima.roomName}}</p>
+                            </a>
+                        </marquee>
+                    </div>
 
-        </ion-list>
-    </ion-content>
-</ion-view>
+                </div>
+
+                </div>
+
+                <ion-scroll class="card LiveP"
+                            direction="x"
+                            min-zoom="0.5"
+                            max-zoom="1">
+                    <div class="classBar1">
+                        <a ng-repeat="ima in itema" ng-click="GOSome($index)">
+                            <img ng-src="{{ima.icon}}">
+                            <p>{{ima.tname}}</p>
+                        </a>
+                    </div>
+                </ion-scroll>
+                <ion-list class="DSAsa" >
+                    <ion-item  style='background: url("{{ite.image}}");background-size: 100%;height: 150px' ng-repeat="ite in imad">
+                        <!--<span ng-repeat="">{{ite.sourceinfo.tname}}</span>-->
+                        <span class="DSAsacc">{{ite.roomName}}</span>
+                        <div class="DSAsaA" ng-if="ite.sourceinfo" >
+                            <img ng-src="{{ite.sourceinfo.timg}}">
+                            <span class="DSAsaAAA">
+                     {{ite.sourceinfo.tname}}
+                    </span>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-view>
+    </ion-slide>
+    <ion-slide>
+        <ion-view>
+            <ion-content>
+                <div class="liveTow"></div>
+                <ion-list class="DSAsa" >
+                    <ion-item  style='background: url("{{ite.image}}");background-size: 100%;height: 150px' ng-repeat="ite in imad">
+                        <!--<span ng-repeat="">{{ite.sourceinfo.tname}}</span>-->
+                        <span class="DSAsacc">{{ite.roomName}}</span>
+                        <div class="DSAsaA" ng-if="ite.sourceinfo" >
+                            <img ng-src="{{ite.sourceinfo.timg}}">
+                            <span class="DSAsaAAA">
+                     {{ite.sourceinfo.tname}}
+                    </span>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-view>
+    </ion-slide>
+    <ion-slide>
+        <ion-view>
+            <ion-content>
+               <div style="height: 10rem;width: 100%;border-bottom: 2px solid gray">
+                   <div style="width: 50%;height: 100%; background-color: #0a9dc7;margin: auto">
+                       <div style="width: 10rem;height: 5rem;background-color: #4cd964;"></div>
+                   </div>
+               </div>
+            </ion-content>
+        </ion-view>
+    </ion-slide>
+</ion-slide-box>

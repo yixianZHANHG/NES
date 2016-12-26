@@ -2,7 +2,7 @@
  * Created by qingyun on 16/11/30.
  */
 //js程序入口
-angular.module('myApp',['ionic','myApp.httpFactory','myApp.slideBox','myApp.tabs','myApp.news','myApp.live','myApp.topic','myApp.personal','myApp.my','myApp.newCon','ionic-datepicker','myApp.topicOne']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+angular.module('myApp',['ionic','myApp.httpFactory','myApp.slideBox','myApp.tabs','myApp.news','myApp.live','myApp.topic','myApp.personal','myApp.my','myApp.newCon','ionic-datepicker','myApp.topicOne','myApp.liveOne']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     $ionicConfigProvider.views.transition('ios');
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.navBar.alignTitle('center');
@@ -29,12 +29,19 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('liveController',['$scope','$ionicSlideBoxDelegate','HttpFactory',function ($scope,$ionicSlideBoxDelegate,HttpFactory) {
+}]).controller('liveController',['$scope','$ionicSlideBoxDelegate','$state','HttpFactory',function ($scope,$ionicSlideBoxDelegate,$state,HttpFactory) {
     // 轮播图
     $scope.news = {
         adsArray1:[]
     };
+    $scope.pop = function (index) {
+
+
+    };
+
+    var url = "http://data.live.126.net/livechannel/classifylist.json";
     var url = "http://data.live.126.net/livechannel/previewlist.json";
+
     HttpFactory.getData(url).then(function (result) {
         // console.log(result);
         var img_title_Array = [];
@@ -48,14 +55,42 @@ angular.module('myApp.live',[]).config(['$stateProvider',function ($stateProvide
             }
             $scope.news.adsArray1 = img_title_Array;
         }
-
         $scope.imas = result.future;
         $scope.itema = result.sublives;
-
         $scope.imad = result.live_review;
+
+
+
+        // 标题详情页面跳转
+        $scope.GOSome = function (index) {
+            var wh = $scope.itema[index].tid;
+            $state.go('liveOne',{data:wh});
+        }
+    });
+
+}]);
+/**
+ * Created by Administrator on 2016/12/22.
+ */
+angular.module('myApp.liveOne',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('liveOne',{
+        url:'/liveOne',
+        templateUrl:'liveOne.html',
+        controller:'liveOneController',
+        params:{'data':null}
 
     });
 
+}]).controller('liveOneController',['$scope','$stateParams','$sce','HttpFactory',function ($scope,$stateParams,$sce,HttpFactory) {
+    var urla = $stateParams.data;
+    console.log(urla);
+    var url ='http://c.m.163.com/nc/subscribe/list/'+urla+'/live/0-20.html';
+    console.log(url);
+    HttpFactory.getData(url).then(function (result) {
+        // console.log(result);
+        $scope.items = result.subscribe_info;
+        console.log(result.subscribe_info);
+    })
 
 }]);
 /**
@@ -220,7 +255,6 @@ angular.module('cftApp.news2',[]).controller('newsController2',['$scope','$ionic
             }
             if (!$scope.news.adsArray2.length){
                 if(result[0].ads){
-                    //由于网易新闻有时候除了第一次之外没有头条用个数组存着
                     $scope.news.adsArray2 = result[0].ads;
                 }
             }
@@ -248,24 +282,24 @@ angular.module('myApp.personal',['ionic-datepicker']).config(['$stateProvider','
             }
         }
     });
-    var datePickerObj = {
-        inputDate: new Date(),
-        titleLabel: 'Select a Date',
-        setLabel: 'Set',
-        todayLabel: 'Today',
-        closeLabel: 'Close',
-        mondayFirst: false,
-        weeksList: ["S", "M", "T", "W", "T", "F", "S"],
-        monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
-        templateType: 'popup',
-        from: new Date(2012, 8, 1),
-        to: new Date(2018, 8, 1),
-        showTodayButton: true,
-        dateFormat: 'dd MMMM yyyy',
-        closeOnSelect: false,
-        disableWeekdays: []
-    };
-    ionicDatePickerProvider.configDatePicker(datePickerObj);
+    // var datePickerObj = {
+    //     inputDate: new Date(),
+    //     titleLabel: 'Select a Date',
+    //     setLabel: 'Set',
+    //     todayLabel: 'Today',
+    //     closeLabel: 'Close',
+    //     mondayFirst: false,
+    //     weeksList: ["S", "M", "T", "W", "T", "F", "S"],
+    //     monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+    //     templateType: 'popup',
+    //     from: new Date(2012, 8, 1),
+    //     to: new Date(2018, 8, 1),
+    //     showTodayButton: true,
+    //     dateFormat: 'dd MMMM yyyy',
+    //     closeOnSelect: false,
+    //     disableWeekdays: []
+    // };
+    // ionicDatePickerProvider.configDatePicker(datePickerObj);
 }]).controller('personalController',['$scope','ionicDatePicker','$ionicBackdrop','$timeout',function ($scope,ionicDatePicker,$ionicBackdrop, $timeout) {
     var ipObj1 = {
         callback: function (val) {  //Mandatory
@@ -296,8 +330,19 @@ angular.module('myApp.personal',['ionic-datepicker']).config(['$stateProvider','
 /**
  * Created by qingyun on 16/11/30.
  */
-angular.module('myApp.tabs',[]).controller('tabsController',['$scope',function ($scope) {
-
+angular.module('myApp.tabs',[]).controller('tabsController',['$scope','$ionicSlideBoxDelegate',function ($scope,$ionicSlideBoxDelegate) {
+$scope.items = ["热门",'分类','订阅'];
+    $scope.dd =function (event,index) {
+        // 先要取到所以得span标签
+        var allSpan = angular.element(event.currentTarget).parent().children();
+        console.log(allSpan);
+        var item = angular.element(event.target);
+        console.log(item);
+        allSpan.removeClass('active');
+        item.addClass('active');
+        $ionicSlideBoxDelegate.slide(index);
+    };
+    $scope.item = ["问吧",'话题','关注'];
 }]);
 /**
  * Created by qingyun on 16/11/30.
@@ -350,13 +395,13 @@ angular.module('myApp.topic',[]).config(['$stateProvider',function ($stateProvid
     $scope.doSome = function (index) {
         var zyx = $scope.items[index].expertId;
         $state.go('topicOne',{data:zyx});
-    }
+    };
 $scope.changHight = function () {
     var car = document.querySelector('.topicCarda')
-    if(car.style.height == '67px'){
-        car.style.height = '210px';
-    }else {
+    if(car.style.height == '210px'){
         car.style.height = '67px';
+    }else {
+        car.style.height = '210px';
     }
 }
 
@@ -403,10 +448,10 @@ angular.module('myApp.topicOne',[]).config(['$stateProvider',function ($statePro
     $scope.changHight = function () {
         var car = document.querySelector('.topickKard')
         // console.log(car);
-        if(car.style.height == '275px'){
+        if(car.style.height == '200px'){
             car.style.height = '100px';
         }else {
-            car.style.height = '275px';
+            car.style.height = '200px';
         }
     }
 
